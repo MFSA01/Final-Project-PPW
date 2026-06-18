@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulir Pendaftaran - BISA Academy">
+    <title>Formulir Pendaftaran - BISA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      /* Hero Section Background Wrapper */
+      .hero-section {
+        background-color: #EEF4FC;
+        padding: 60px 0 80px 0;
+        margin-bottom: 60px;
+      }
+      
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+      .badge-tag {
+        background-color: #ffdf9b;
+        padding: 6px 16px;
+        border-radius: 9999px;
+        font-size: 14px;
+        font-weight: 400;
+        color: #251a00;
+      }
+      .membangun-masa-depan {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1.2;
+        max-width: 896px;
+      }
+      .membangun-masa-depan .span { color: #296ca9; }
+      .hero-desc {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #414750;
+        max-width: 768px;
+      }
+
+      /* --- VISI MISI SECTION --- */
+      .visimisi-section {
+        max-width: 1120px;
+        margin: 0 auto 80px auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+      }
+      .card {
+        border-radius: 24px;
+        padding: 50px 60px;
+        text-align: center;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      }
+      .card.visi {
+        background: linear-gradient(135deg, #2e7bb4 0%, #296ca9 100%);
+      }
+      .card.misi {
+        background: linear-gradient(135deg, #296ca9 0%, #1e5687 100%);
+      }
+      .icon-circle {
+        background-color: #ffffff;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .icon-circle i {
+        font-size: 36px;
+        color: #296ca9;
+      }
+      .card h2 {
+        font-size: 36px;
+        font-weight: 800;
+        margin: 0;
+      }
+      .card p {
+        font-size: 18px;
+        line-height: 1.7;
+        font-weight: 400;
+        max-width: 800px;
+        margin: 0;
+        opacity: 0.95;
+      }
+
+      /* --- CALL TO ACTION (CTA) SECTION --- */
+      .cta-section {
+        max-width: 1120px;
+        margin: 80px auto;
+        padding: 60px 40px 0 40px;
+        background: linear-gradient(180deg, rgba(143, 203, 230, 0.4) 0%, rgba(41, 108, 169, 0.9) 100%);
+        border-radius: 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section h2 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.3;
+        max-width: 750px;
+        margin: 0 auto 20px auto;
+      }
+      .cta-section p {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+      }
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+      .btn-dark, .btn-light {
+        padding: 14px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 16px;
+      }
+      .btn-dark {
+        background-color: #121212;
+        color: #ffffff;
+      }
+      .btn-dark:hover {
+        background-color: #000000;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      .btn-light {
+        background-color: #ffffff;
+        color: #121212;
+      }
+      .btn-light:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .btn-dark i, .btn-light i {
+        font-size: 18px;
+      }
+      .cta-image-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .cta-image-wrapper img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-section {
+          padding: 40px 0 60px 0;
+          margin-bottom: 40px;
+        }
+        
+        .membangun-masa-depan {
+          font-size: 36px;
+        }
+        
+        .hero-desc {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-bisa" id="navbar">
+        <div class="container">
+
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2" id="navbar-logo">
+                <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                <div class="logo-text">
+                    <span class="brand-name">BISA<span class="titik">.</span></span>
+                    <span class="brand-sub">Academy</span>
+                </div>
+            </a>
+
+            <!-- navbar mobiloe -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#program" id="nav-program">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#layanan" id="nav-layanan">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="tentang.html" id="nav-tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#testimoni" id="nav-testimoni">Testimoni</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 navbar-actions">
+                    <a href="formulir-pendaftaran.html" class="btn btn-outline-secondary btn-masuk" id="btn-signup">Masuk</a>
+                    <a href="#hubungi-kami-title" class="btn btn-primary btn-hubungi" id="btn-hubungi">Hubungi Kami</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- div untuk memberikan jarak (alternatifnya pakai padding-top: 72px;)  -->
+    <div style="height: 72px;"></div>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-container" aria-labelledby="tentang-bisa-academy">
+            <div class="badge-tag">Tentang BISA Academy</div>
+            <h1 id="tentang-bisa-academy" class="membangun-masa-depan">
+              <span class="text-wrapper">Membangun Masa Depan </span>
+              <span class="span">Bisnis Indonesia</span>
+            </h1>
+            <p class="hero-desc">
+              BISA Academy didirikan dengan visi untuk mentransformasi potensi bisnis di Indonesia melalui pendekatan terstruktur dan praktis. Kami memulai perjalanan ini dengan keyakinan bahwa setiap organisasi memiliki kapasitas untuk tumbuh secara eksponensial jika dibekali dengan strategi yang tepat, tim yang tangguh, dan sistem yang solid.
+            </p>
+          </div>
+        </section>
+
+        <section class="visimisi-section" aria-label="Visi dan Misi BISA Academy">
+          <article class="card visi">
+            <div class="icon-circle">
+              <i class="fas fa-eye"></i>
+            </div>
+            <h2>Visi Kami</h2>
+            <p>
+              Menjadi pusat edukasi bisnis terdepan di Indonesia yang dipercaya oleh para pemimpin perusahaan untuk mencetak ekosistem bisnis yang berkelanjutan, inovatif, dan berdaya saing global melalui pendekatan pembelajaran yang terstruktur dan berdampak nyata.
+            </p>
+          </article>
+
+          <article class="card misi">
+            <div class="icon-circle">
+              <i class="fas fa-flag"></i>
+            </div>
+            <h2>Misi Kami</h2>
+            <p>
+              Menjadi pusat edukasi bisnis terdepan di Indonesia yang dipercaya oleh para pemimpin perusahaan untuk mencetak ekosistem bisnis yang berkelanjutan, inovatif, dan berdaya saing global melalui pendekatan pembelajaran yang terstruktur dan berdampak nyata.
+            </p>
+          </article>
+        </section>
+
+        <section class="hubungi-kami cta-section" aria-labelledby="hubungi-kami-title">
+          <h2 id="hubungi-kami-title">
+            Siap Memulai Perjalanan Transformasi Bersama BISA Academy?
+          </h2>
+          <p class="text-wrapper-23">
+            Konsultasikan kebutuhan pelatihan dan pengembangan tim Anda. Gratis, tanpa komitmen.
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn-dark" aria-label="Hubungi Kami melalui WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+              <span>Hubungi Kami</span>
+            </a>
+            <a href="formulir-pendaftaran.html" class="btn-light" aria-label="Konsultasi Gratis">
+              <i class="far fa-calendar-alt"></i>
+              <span>Konsultasi Gratis</span>
+            </a>
+          </div>
+          <div class="cta-image-wrapper">
+            <img class="image" src="assets/img/image8.png" alt="Tim BISA Academy" width="600" height="600"/>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-bisa">    
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5">
+                    <a href="index.html" class="d-flex align-items-center gap-2 mb-3 text-decoration-none">
+                        <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                        <div class="logo-text">
+                            <span class="brand-name">BISA<span class="titik">.</span></span>
+                            <span class="brand-sub">Academy</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc mb-4">
+                        Lembaga pelatihan & konsultasi bisnis yang membantu early founders dan UMKM Indonesia tumbuh dari nol hingga autopilot.
+                    </p>
+                    
+                    <h5 class="subscribe-title mb-2">Subscribe Email</h5>
+                    <p class="subscribe-desc mb-3">Temukan insight bisnis dan transformasi digital melalui update nawala dan artikel terbaru kami</p>
+                    
+                    <form class="subscribe-form d-flex">
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0 rounded-start-pill"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control bg-light border-start-0 rounded-end-pill px-0" placeholder="Masukkan email anda" required>
+                        </div>
+                        <button class="btn btn-primary btn-subscribe rounded-pill ms-2 px-4" type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-4">
+                    <h5 class="footer-title">PROGRAM</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Communication for Team</a></li>
+                        <li><a href="#">Communication for Sales</a></li>
+                        <li><a href="#">Harmonic System</a></li>
+                        <li><a href="#">Program CSR Pendidikan</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-4">
+                    <h5 class="footer-title">KONTAK</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li>Jl. Danau Maninjau No. 39, Surabaya, Kec. Kedaton, Kota Bandar Lampung, Lampung 35122</li>
+                        <li>(+62)822 7979 3385</li>
+                        <li>hbisaacademyindonesia@gmail.com</li>
+                    </ul>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="mb-2 mb-md-0">Copyright &copy; 2026 BISA Academy Indonesia. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms & Conditions</a> <span class="mx-2">•</span> <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

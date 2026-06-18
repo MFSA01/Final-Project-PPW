@@ -1,0 +1,311 @@
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background: #f8f9fb;
+  color: #1e293b;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.navbar-bisa {
+  background: #ffffff;
+  border-bottom: 1px solid #e8ecf1;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  padding-top: 0;
+  padding-bottom: 0;
+  min-height: 72px;
+}
+
+.navbar-bisa .navbar-brand {
+  gap: 12px;
+  padding: 0;
+  transition: opacity 0.2s ease;
+}
+
+.navbar-bisa .navbar-brand:hover {
+  opacity: 0.85;
+}
+
+.logo-image {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.logo-text .brand-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #296CA9;
+  letter-spacing: -0.3px;
+}
+
+.titik{
+  font-size: 20px;
+  font-weight: 700;
+  color: #E85D26;
+  letter-spacing: -0.3px;
+}
+
+.logo-text .brand-sub {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+
+.navbar-bisa .navbar-nav {
+  gap: 24px;
+}
+
+.navbar-bisa .nav-link {
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #475569;
+  padding: 8px 16px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-bisa .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2.5px;
+  background-color: #296CA9;
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.navbar-bisa .nav-link:hover,
+.navbar-bisa .nav-link:focus {
+  color: #296CA9;
+}
+
+.navbar-bisa .nav-link:hover::after,
+.navbar-bisa .nav-link:focus::after {
+  width: calc(100% - 32px);
+}
+
+.navbar-bisa .nav-link.active {
+  color: #296CA9;
+  font-weight: 600;
+}
+
+.navbar-bisa .nav-link.active::after {
+  width: calc(100% - 32px);
+}
+
+.btn-masuk {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 10px;
+  border: 2px solid #cbd5e1 !important;
+  color: #1e293b !important;
+  background: transparent !important;
+  transition: all 0.25s ease;
+}
+
+.btn-masuk:hover {
+  border-color: #2563eb !important;
+  color: #2563eb !important;
+  background: #eff6ff !important;
+}
+
+.btn-hubungi {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 22px;
+  border-radius: 10px;
+  background: #296CA9 !important;
+  border-color: #296CA9 !important;
+  color: #ffffff !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-hubungi:hover {
+  background: #1e5a8f !important;
+  border-color: #1e5a8f !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transform: translateY(-1px);
+}
+.navbar-bisa .navbar-toggler {
+  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+}
+
+.navbar-bisa .navbar-toggler:focus {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+@media (max-width: 991.98px) {
+  .navbar-bisa {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .navbar-bisa .navbar-nav {
+    padding-top: 15px;
+    padding-bottom: 0;
+    margin-top: 15px;
+    border-top: 1px solid #e8ecf1;
+  }
+
+  .navbar-bisa .nav-item {
+    border-bottom: 1px solid #e8ecf1;
+  }
+
+  .navbar-bisa .nav-link {
+    padding: 14px 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #475569;
+    transition: all 0.2s ease;
+  }
+
+  .navbar-bisa .nav-link::after {
+    display: none;
+  }
+
+  .navbar-bisa .nav-link:hover {
+    color: #296CA9;
+    background-color: #f8fafc;
+    padding-left: 22px;
+  }
+
+  .navbar-actions {
+    flex-direction: column;
+    padding: 24px 0 10px;
+    gap: 12px !important;
+  }
+
+  .navbar-actions .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+  }
+}
+
+.footer-bisa {
+  background: #ffffff;
+  padding: 60px 0 30px;
+  border-top: 1px solid #e8ecf1;
+  color: #475569;
+}
+
+.footer-desc {
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.subscribe-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.subscribe-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.subscribe-form .input-group-text {
+  color: #94a3b8;
+  padding-left: 20px;
+}
+
+.subscribe-form .form-control {
+  font-size: 14px;
+}
+
+.subscribe-form .form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+
+.btn-subscribe {
+  background: #296CA9;
+  border-color: #296CA9;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.btn-subscribe:hover {
+  background: #1e5a8f;
+  border-color: #1e5a8f;
+}
+
+.footer-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #296CA9;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  font-size: 14.5px;
+  color: #475569;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #296CA9;
+}
+
+.footer-contact li {
+  font-size: 14.5px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #1e293b;
+  color: #ffffff;
+  border-radius: 6px;
+  margin-right: 8px;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.social-links a:hover {
+  background: #296CA9;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  font-size: 13.5px;
+  color: #64748b;
+}
+
+.footer-legal a {
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.footer-legal a:hover {
+  color: #296CA9;
+}

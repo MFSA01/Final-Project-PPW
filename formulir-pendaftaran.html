@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulir Pendaftaran - BISA Academy">
+    <title>Formulir Pendaftaran - BISA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-bisa" id="navbar">
+        <div class="container">
+
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2" id="navbar-logo">
+                <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                <div class="logo-text">
+                    <span class="brand-name">BISA<span class="titik">.</span></span>
+                    <span class="brand-sub">Academy</span>
+                </div>
+            </a>
+
+            <!-- navbar mobiloe -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#program" id="nav-program">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#layanan" id="nav-layanan">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentang.html" id="nav-tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimoni" id="nav-testimoni">Testimoni</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 navbar-actions">
+                    <a href="formulir-pendaftaran.html" class="btn btn-outline-secondary btn-masuk" id="btn-signup">Masuk</a>
+                    <a href="index.html#kontak" class="btn btn-primary btn-hubungi" id="btn-hubungi">Hubungi Kami</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div style="height: 72px;"></div>
+
+    <!-- section hero -->
+    <section class="hero-section" id="hero-section">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+
+                <!-- Hero Teks -->
+                <div class="col-lg-5">
+                    <div class="hero-badge mb-3">
+                        <span><i class="bi bi-star-fill text-warning"></i> TERBATAS • GRATIS • 45 MENIT</span>
+                    </div>
+                    <h1 class="hero-title">
+                        Book <span class="text-highlight">Free</span>
+                        <span class="text-highlight">Consultation</span><br>
+                        Session Anda
+                    </h1>
+                    <p class="hero-desc mt-3">
+                        Ceritakan tentang bisnis Anda. Kami akan membantu
+                        temukan solusi terbaik dalam sesi konsultasi 45 menit
+                        secara gratis.
+                    </p>
+                    <div class="hero-tags mt-4">
+                        <span class="hero-tag"><i class="bi bi-clock"></i> 45 Menit</span>
+                        <span class="hero-tag"><i class="bi bi-person-fill"></i> 1-on-1 Session</span>
+                        <span class="hero-tag"><i class="bi bi-check-circle-fill text-success"></i> 100% Gratis</span>
+                        <span class="hero-tag"><i class="bi bi-bullseye text-danger"></i> Solusi Spesifik</span>
+                    </div>
+                </div>
+
+                <!-- Formulir Card -->
+                <div class="col-lg-7">
+                    <div class="form-card" id="form-card">
+
+                        <div class="form-card-header">
+                            <h2>Formulir Pendaftaran</h2>
+                            <p>Isi data dengan lengkap agar tim kami dapat mempersiapkan sesi terbaik untukmu</p>
+                        </div>
+
+                        <div class="form-card-body">
+
+                            <div class="stepper mb-4">
+                                <div class="stepper-item active" data-step="1">
+                                    <div class="stepper-circle">1</div>
+                                    <span class="stepper-label">Data Diri</span>
+                                </div>
+                                <div class="stepper-line" id="line-1-2"></div>
+                                <div class="stepper-item" data-step="2">
+                                    <div class="stepper-circle">2</div>
+                                    <span class="stepper-label">Bisnis</span>
+                                </div>
+                                <div class="stepper-line" id="line-2-3"></div>
+                                <div class="stepper-item" data-step="3">
+                                    <div class="stepper-circle">3</div>
+                                    <span class="stepper-label">Jadwal</span>
+                                </div>
+                                <div class="stepper-line" id="line-3-4"></div>
+                                <div class="stepper-item" data-step="4">
+                                    <div class="stepper-circle">4</div>
+                                    <span class="stepper-label">Review</span>
+                                </div>
+                            </div>
+
+                            <form id="registrationForm" novalidate>
+
+                                <!-- ===== Step 1: Data Diri ===== -->
+                                <div class="form-step active" id="step-1">
+                                    <div class="step-section-label mb-3">
+                                        <span class="section-dot"></span> DATA DIRI
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="namaLengkap" class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="namaLengkap" placeholder="Nama lengkap anda" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="namaPerusahaan" class="form-label">Nama Perusahaan <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="namaPerusahaan" placeholder="Nama bisnis/perusahaan" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="noWhatsapp" class="form-label">No. WhatsApp <span class="text-danger">*</span></label>
+                                            <div class="input-group">
+                                                <span class="input-group-text bg-white text-muted border-end-0 px-3" id="addon-wa" style="border-color: #d6e0eb; font-weight: 500; border-radius: 10px 0 0 10px;">+62</span>
+                                                <input type="text" class="form-control border-start-0 ps-0" id="noWhatsapp" placeholder="xxx-xxxx-xxxx" required style="border-radius: 0 10px 10px 0;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="emailUtama" class="form-label">Email <span class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" id="emailUtama" placeholder="example@bisnis.com" required>
+                                            <div class="invalid-feedback">masukkan email yang benar !</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ===== Step 2: Bisnis ===== -->
+                                <div class="form-step" id="step-2">
+                                    <div class="row g-4">
+                                        <div class="col-12">
+                                            <label for="industriBisnis" class="form-label">Industri/Bidang Usaha <span class="text-danger">*</span></label>
+                                            <select class="form-select" id="industriBisnis" required>
+                                                <option value="" disabled selected>-- Pilih Industri --</option>
+                                                <option value="teknologi">Teknologi</option>
+                                                <option value="retail">Retail / E-Commerce</option>
+                                                <option value="fnb">Food & Beverage</option>
+                                                <option value="jasa">Jasa / Konsultan</option>
+                                                <option value="pendidikan">Pendidikan</option>
+                                                <option value="kesehatan">Kesehatan</option>
+                                                <option value="manufaktur">Manufaktur</option>
+                                                <option value="lainnya">Lainnya</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label mb-2">Omset Bisnis per Bulan <span class="text-danger">*</span></label>
+                                            <div class="row g-3">
+                                                <div class="col-md-6">
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset1" value="< Rp 10 Juta" required>
+                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset1">&lt; Rp 10 Juta</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset2" value="Rp 10 - 50 Juta">
+                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset2">Rp 10 - 50 Juta</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset3" value="Rp 50 - 200 Juta">
+                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset3">Rp 50 - 200 Juta</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset4" value="Rp 200 Juta - 1 M">
+                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset4">Rp 200 Juta - 1 M</label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset5" value="> Rp 1 Miliar">
+                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset5">&gt; Rp 1 Miliar</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 mt-4">
+                                            <label class="form-label mb-1">Kondisi Bisnis Saat Ini <span class="text-danger">*</span></label>
+                                            <p class="text-muted fst-italic" style="font-size: 13.5px; margin-bottom: 20px;">Jawab setiap pertanyaan dengan jujur sesuai kondisi bisnis kamu sekarang</p>
+
+                                            <!-- Pertanyaan 1 -->
+                                            <div class="question-card">
+                                                <p class="question-text">Apakah setidaknya 30-40% pelanggan membeli kembali atau secara aktif mereferensikan orang lain (dengan bukti)?</p>
+                                                <div class="question-options">
+                                                    <input type="radio" class="btn-check" name="q1" id="q1_ya" value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q1_ya"><i class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q1" id="q1_tidak" value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q1_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pertanyaan 2 -->
+                                            <div class="question-card">
+                                                <p class="question-text">Apakah harga saat ini menghasilkan keuntungan operasional setelah semua biaya langsung dan tidak langsung?</p>
+                                                <div class="question-options">
+                                                    <input type="radio" class="btn-check" name="q2" id="q2_ya" value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q2_ya"><i class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q2" id="q2_tidak" value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q2_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pertanyaan 3 -->
+                                            <div class="question-card">
+                                                <p class="question-text">Apakah perusahaan dapat dengan jelas mendeskripsikan pelanggan idealnya dan secara rutin menolak pelanggan yang tidak sesuai?</p>
+                                                <div class="question-options">
+                                                    <input type="radio" class="btn-check" name="q3" id="q3_ya" value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q3_ya"><i class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q3" id="q3_tidak" value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q3_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pertanyaan 4 -->
+                                            <div class="question-card">
+                                                <p class="question-text">Dalam setiap proses penjualan, apakah secara konsisten dijelaskan mengapa pelanggan memilih kita dibandingkan alternatif lain?</p>
+                                                <div class="question-options">
+                                                    <input type="radio" class="btn-check" name="q4" id="q4_ya" value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q4_ya"><i class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q4" id="q4_tidak" value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q4_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pertanyaan 5 -->
+                                            <div class="question-card">
+                                                <p class="question-text">Apakah pendapatan, biaya, keuntungan, dan posisi kas dapat dijelaskan tanpa perkiraan?</p>
+                                                <div class="question-options">
+                                                    <input type="radio" class="btn-check" name="q5" id="q5_ya" value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q5_ya"><i class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q5" id="q5_tidak" value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q5_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pertanyaan 6 -->
+                                            <div class="question-card">
+                                                <p class="question-text">Apakah operasional harian masih bergantung pada pemilik atau individu tertentu?</p>
+                                                <div class="question-options">
+                                                    <input type="radio" class="btn-check" name="q6" id="q6_ya" value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q6_ya"><i class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q6" id="q6_tidak" value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q6_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ===== Step 3: Jadwal ===== -->
+                                <div class="form-step" id="step-3">
+                                    <div class="step-section-label mb-3">
+                                        <span class="section-dot"></span> JADWAL & TOPIK KONSULTASI
+                                    </div>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label for="tanggalKonsultasi" class="form-label">Tanggal Konsultasi <span class="text-danger">*</span></label>
+                                            <input type="date" class="form-control" id="tanggalKonsultasi" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="waktuKonsultasi" class="form-label">Waktu Konsultasi <span class="text-danger">*</span></label>
+                                            <select class="form-select" id="waktuKonsultasi" required>
+                                                <option value="" disabled selected>Pilih waktu</option>
+                                                <option value="09:00">09:00 - 09:45 WIB</option>
+                                                <option value="10:00">10:00 - 10:45 WIB</option>
+                                                <option value="13:00">13:00 - 13:45 WIB</option>
+                                                <option value="14:00">14:00 - 14:45 WIB</option>
+                                                <option value="15:00">15:00 - 15:45 WIB</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="metodeSesi" class="form-label">Metode Sesi <span class="text-danger">*</span></label>
+                                            <div class="d-flex gap-3 mt-1">
+                                                <div class="form-check metode-option">
+                                                    <input class="form-check-input" type="radio" name="metodeSesi" id="metodeOnline" value="online" checked required>
+                                                    <label class="form-check-label" for="metodeOnline">
+                                                        <i class="bi bi-laptop"></i> Online (Zoom/Google Meet)
+                                                    </label>
+                                                </div>
+                                                <div class="form-check metode-option">
+                                                    <input class="form-check-input" type="radio" name="metodeSesi" id="metodeOffline" value="offline">
+                                                    <label class="form-check-label" for="metodeOffline">
+                                                        <i class="bi bi-building"></i> Offline (Tatap Muka)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="pertanyaan" class="form-label">Pertanyaan/Topik Konsultasi</label>
+                                            <textarea class="form-control" id="pertanyaan" rows="2" placeholder="Ceritakan tantangan bisnis yang ingin kamu bahas. Semakin detail, semakin baik persiapan tim kami..."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- ===== Step 4: Review ===== -->
+                                <div class="form-step" id="step-4">
+                                    <div class="step-section-label mb-3">
+                                        <span class="section-dot"></span> REVIEW
+                                    </div>
+                                    <p class="text-muted mb-3" style="font-size: 14px;">Pastikan semua data sudah benar sebelum mengirim.</p>
+                                    <div class="review-summary" id="review-summary">
+                                    </div>
+                                </div>
+
+                                <!-- Tombol Navigasi -->
+                                <div class="form-nav mt-4">
+                                    <button type="button" class="btn btn-outline-secondary btn-kembali d-none" id="btn-prev">
+                                        Kembali
+                                    </button>
+                                    <div class="ms-auto d-flex gap-2">
+                                        <button type="button" class="btn btn-primary btn-lanjut" id="btn-next">
+                                            Lanjut
+                                        </button>
+                                        <button type="submit" class="btn btn-success btn-kirim d-none" id="btn-submit">
+                                            <i class="bi bi-check2-circle"></i> Kirim Pendaftaran
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-bisa">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5">
+                    <a href="index.html" class="d-flex align-items-center gap-2 mb-3 text-decoration-none">
+                        <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                        <div class="logo-text">
+                            <span class="brand-name">BISA<span class="titik">.</span></span>
+                            <span class="brand-sub">Academy</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc mb-4">
+                        Lembaga pelatihan & konsultasi bisnis yang membantu early founders dan UMKM Indonesia tumbuh dari nol hingga autopilot.
+                    </p>
+                    
+                    <h5 class="subscribe-title mb-2">Subscribe Email</h5>
+                    <p class="subscribe-desc mb-3">Temukan insight bisnis dan transformasi digital melalui update nawala dan artikel terbaru kami</p>
+                    
+                    <form class="subscribe-form d-flex">
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0 rounded-start-pill"><i class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control bg-light border-start-0 rounded-end-pill px-0" placeholder="Masukkan email anda" required>
+                        </div>
+                        <button class="btn btn-primary btn-subscribe rounded-pill ms-2 px-4" type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-4">
+                    <h5 class="footer-title">PROGRAM</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Communication for Team</a></li>
+                        <li><a href="#">Communication for Sales</a></li>
+                        <li><a href="#">Harmonic System</a></li>
+                        <li><a href="#">Program CSR Pendidikan</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-4">
+                    <h5 class="footer-title">KONTAK</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li>Jl. Danau Maninjau No. 39, Surabaya, Kec. Kedaton, Kota Bandar Lampung, Lampung 35122</li>
+                        <li>(+62)822 7979 3385</li>
+                        <li>hbisaacademyindonesia@gmail.com</li>
+                    </ul>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="mb-2 mb-md-0">Copyright &copy; 2026 BISA Academy Indonesia. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms & Conditions</a> <span class="mx-2">•</span> <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        (function () {
+            const totalSteps = 4;
+            let currentStep = 1;
+
+            const form = document.getElementById('registrationForm');
+            const btnNext = document.getElementById('btn-next');
+            const btnPrev = document.getElementById('btn-prev');
+            const btnSubmit = document.getElementById('btn-submit');
+
+            function goToStep(step) {
+                document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+                document.getElementById('step-' + step).classList.add('active');
+
+                document.querySelectorAll('.stepper-item').forEach(item => {
+                    const s = parseInt(item.dataset.step);
+                    item.classList.remove('active', 'completed');
+                    if (s === step) item.classList.add('active');
+                    else if (s < step) item.classList.add('completed');
+                });
+
+                for (let i = 1; i < totalSteps; i++) {
+                    const line = document.getElementById('line-' + i + '-' + (i + 1));
+                    if (line) {
+                        line.classList.toggle('completed', i < step);
+                    }
+                }
+
+                // Toggle tombol sebelumnya 
+                btnPrev.classList.toggle('d-none', step === 1);
+
+                // Toggle tombol selanjutnya / submit
+                if (step === totalSteps) {
+                    btnNext.classList.add('d-none');
+                    btnSubmit.classList.remove('d-none');
+                    populateReview();
+                } else {
+                    btnNext.classList.remove('d-none');
+                    btnSubmit.classList.add('d-none');
+                }
+
+                currentStep = step;
+            }
+
+            function validateStep(step) {
+                const stepEl = document.getElementById('step-' + step);
+                const inputs = stepEl.querySelectorAll('input[required]:not([type="radio"]), select[required], textarea[required]');
+                let valid = true;
+
+                inputs.forEach(input => {
+                    let isValidInput = true;
+                    if (!input.value.trim() || (input.tagName === 'SELECT' && input.value === '')) {
+                        isValidInput = false;
+                    }
+
+                    // Validasi email (wajib ada @ dan domain email)
+                    if (input.type === 'email' && input.value.trim()) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(input.value)) {
+                            isValidInput = false;
+                        }
+                    }
+
+                    if (!isValidInput) {
+                        input.classList.add('is-invalid');
+                        valid = false;
+                    } else {
+                        input.classList.remove('is-invalid');
+                    }
+                });
+
+                const radioNames = new Set();
+                stepEl.querySelectorAll('input[type="radio"][required]').forEach(r => radioNames.add(r.name));
+                
+                radioNames.forEach(name => {
+                    const checked = stepEl.querySelector('input[name="' + name + '"]:checked');
+                    if (!checked) {
+                        valid = false;
+                        const firstRadio = stepEl.querySelector('input[name="' + name + '"]');
+                        if (firstRadio && firstRadio.closest('.question-card')) {
+                             firstRadio.closest('.question-card').style.borderColor = '#ef4444';
+                        }
+                    } else {
+                        const checkedRadio = stepEl.querySelector('input[name="' + name + '"]:checked');
+                        if (checkedRadio && checkedRadio.closest('.question-card')) {
+                             checkedRadio.closest('.question-card').style.borderColor = '#e8ecf1';
+                        }
+                    }
+                });
+
+                return valid;
+            }
+            function populateReview() {
+                const getValue = (id) => {
+                    const el = document.getElementById(id);
+                    if (!el) return '-';
+                    if (el.tagName === 'SELECT') {
+                        return el.selectedIndex > 0 ? el.options[el.selectedIndex].text : '-';
+                    }
+                    return el.value || '-';
+                };
+
+                const metode = document.querySelector('input[name="metodeSesi"]:checked');
+
+                const sections = [
+                    {
+                        title: 'Data Diri',
+                        items: [
+                            ['Nama Lengkap', getValue('namaLengkap')],
+                            ['Nama Perusahaan', getValue('namaPerusahaan')],
+                            ['No. WhatsApp', '+62 ' + getValue('noWhatsapp')],
+                            ['Email', getValue('emailUtama')]
+                        ]
+                    },
+                    {
+                        title: 'Bisnis',
+                        items: [
+                            ['Industri/Bidang', getValue('industriBisnis')],
+                            ['Omset/Bulan', document.querySelector('input[name="omsetBisnis"]:checked')?.value || '-'],
+                            ['Q1: Pelanggan Beli Kembali', document.querySelector('input[name="q1"]:checked')?.value || '-'],
+                            ['Q2: Keuntungan Operasional', document.querySelector('input[name="q2"]:checked')?.value || '-'],
+                            ['Q3: Deskripsi Pelanggan', document.querySelector('input[name="q3"]:checked')?.value || '-'],
+                            ['Q4: Proses Penjualan', document.querySelector('input[name="q4"]:checked')?.value || '-'],
+                            ['Q5: Pendapatan & Kas', document.querySelector('input[name="q5"]:checked')?.value || '-'],
+                            ['Q6: Operasional Harian', document.querySelector('input[name="q6"]:checked')?.value || '-']
+                        ]
+                    },
+                    {
+                        title: 'Jadwal',
+                        items: [
+                            ['Tanggal', getValue('tanggalKonsultasi')],
+                            ['Waktu', getValue('waktuKonsultasi')],
+                            ['Metode', metode ? (metode.value === 'online' ? '<i class="bi bi-laptop"></i> Online' : '<i class="bi bi-building"></i> Offline') : '-'],
+                            ['Pertanyaan/Topik', getValue('pertanyaan')]
+                        ]
+                    }
+                ];
+
+                let html = '';
+                sections.forEach(section => {
+                    html += '<div class="review-section">';
+                    html += '<h6 class="review-section-title">' + section.title + '</h6>';
+                    section.items.forEach(([label, value]) => {
+                        html += '<div class="review-row">';
+                        html += '<span class="review-label">' + label + '</span>';
+                        html += '<span class="review-value">' + value + '</span>';
+                        html += '</div>';
+                    });
+                    html += '</div>';
+                });
+
+                document.getElementById('review-summary').innerHTML = html;
+            }
+            btnNext.addEventListener('click', () => {
+                if (validateStep(currentStep)) {
+                    goToStep(currentStep + 1);
+                }
+            });
+
+            btnPrev.addEventListener('click', () => {
+                if (currentStep > 1) goToStep(currentStep - 1);
+            });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Jika user menekan Enter di input field sebelum step terakhir, arahkan ke step berikutnya
+                if (currentStep < totalSteps) {
+                    if (validateStep(currentStep)) {
+                        goToStep(currentStep + 1);
+                    }
+                    return;
+                }
+
+                // Validasi step terakhir
+                if (validateStep(currentStep)) {
+                    const cardBody = document.querySelector('.form-card-body');
+                    cardBody.innerHTML = `
+                        <div class="text-center py-5">
+                            <div class="success-icon mb-3 text-success"><i class="bi bi-check-circle-fill"></i></div>
+                            <h4 class="fw-bold mb-2">Pendaftaran Berhasil!</h4>
+                            <p class="text-muted">Terima kasih! Tim kami akan menghubungi Anda melalui WhatsApp/Email untuk konfirmasi jadwal sesi konsultasi.</p>
+                            <a href="index.html" class="btn btn-primary btn-hubungi mt-3">Kembali ke Beranda</a>
+                        </div>
+                    `;
+                }
+            });
+
+            form.addEventListener('input', (e) => {
+                if (e.target.classList.contains('is-invalid')) {
+                    e.target.classList.remove('is-invalid');
+                }
+            });
+            form.addEventListener('change', (e) => {
+                if (e.target.type === 'radio' && e.target.closest('.question-card')) {
+                    e.target.closest('.question-card').style.borderColor = '#e8ecf1';
+                }
+            });
+
+            // Auto-format WhatsApp number (hanya angka setelah +62)
+            const waInput = document.getElementById('noWhatsapp');
+            waInput.addEventListener('input', function (e) {
+                // hapus semua karakter non-digit
+                let val = this.value.replace(/\D/g, ''); 
+                
+                // mengabaikan user jika mengetik +62 atau 0
+                if (val.startsWith('62')) {
+                    val = val.substring(2);
+                } else if (val.startsWith('0')) {
+                    val = val.substring(1);
+                }
+
+                // Format: nomor wa
+                let formatted = '';
+                if (val.length > 0) {
+                    formatted += val.substring(0, 3);
+                }
+                if (val.length > 3) {
+                    formatted += '-' + val.substring(3, 7);
+                }
+                if (val.length > 7) {
+                    formatted += '-' + val.substring(7, 12);
+                }
+                
+                this.value = formatted;
+            });
+
+            const dateInput = document.getElementById('tanggalKonsultasi');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.setAttribute('min', today);
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
