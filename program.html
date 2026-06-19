@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulir Pendaftaran - BISA Academy">
+    <title>BISA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .program-hero {
+            background: linear-gradient(180deg, #EEF4FC 0%, #F5F9FD 100%);
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .program-badge {
+            display: inline-block;
+            background-color: #FCF6C2;
+            color: #7C794E;
+            font-size: 13px;
+            font-weight: 700;
+            padding: 8px 18px;
+            border-radius: 50px;
+            border: 1px solid rgba(124, 121, 78, 0.15);
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .program-badge i {
+            color: #EAB308;
+        }
+
+        .program-title {
+            font-size: 52px;
+            font-weight: 800;
+            color: #0F172A;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .program-desc {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #475569;
+            max-width: 820px;
+            margin: 0 auto 40px auto;
+        }
+
+        .stat-card {
+            background-color: #ffffff;
+            border: 1.5px solid #D6E4F0;
+            border-radius: 12px;
+            padding: 10px 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.01);
+            transition: all 0.25s ease;
+            cursor: default;
+        }
+
+        .stat-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+            border-color: #B9D2E6;
+        }
+
+        .stat-icon {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-alumni {
+            color: #1E293B;
+        }
+
+        .icon-kurikulum {
+            color: #3B82F6;
+        }
+
+        .icon-rating {
+            color: #FACC15;
+        }
+
+        .stat-text {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1E293B;
+        }
+
+        @media (max-width: 991.98px) {
+            .program-title {
+                font-size: 42px;
+            }
+
+            .program-hero {
+                padding: 80px 0;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .program-title {
+                font-size: 32px;
+            }
+
+            .program-desc {
+                font-size: 15.5px;
+                margin-bottom: 30px;
+            }
+
+            .stat-card {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+            }
+        }
+
+        .program-list-section {
+            background-color: #FAF9F6;
+            padding: 80px 0;
+        }
+
+        .filter-search-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .filter-btn {
+            background-color: transparent;
+            border: 1.5px solid #E2E8F0;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .filter-btn:hover {
+            background-color: #F1F5F9;
+            color: #1E293B;
+            border-color: #CBD5E1;
+        }
+
+        .filter-btn.active {
+            background-color: #EEF4FC;
+            color: #296CA9;
+            border-color: #296CA9;
+        }
+
+        .search-wrapper {
+            position: relative;
+            width: 280px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 16px 10px 42px;
+            border: 1.5px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #1E293B;
+            outline: none;
+            transition: all 0.25s ease;
+            background-color: #ffffff;
+        }
+
+        .search-input:focus {
+            border-color: #296CA9;
+            box-shadow: 0 0 0 3px rgba(41, 108, 169, 0.1);
+        }
+
+        .search-icon-btn {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94A3B8;
+            font-size: 16px;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .program-card {
+            background-color: #ffffff;
+            border: 1.5px solid #EBF0F6;
+            border-radius: 20px;
+            padding: 24px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .program-card:hover {
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+            border-color: #D6E4F0;
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 220px;
+            border-radius: 14px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            background-color: #F1F5F9;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* .program-card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        } */
+
+        .card-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background-color: #475569;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 6px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #64748B;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-bullets {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .card-bullet-item {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: #334155;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .card-bullet-item i {
+            color: #296CA9;
+            font-size: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .cta-section {
+        max-width: 1120px;
+        margin: 80px auto;
+        padding: 60px 40px 0 40px;
+        background: linear-gradient(180deg, rgba(143, 203, 230, 0.15) 0%, rgba(41, 108, 169, 0.9) 100%);
+        border-radius: 40px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-section h2 {
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1.3;
+        max-width: 750px;
+        margin: 0 auto 20px auto;
+      }
+      .cta-section p {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 600px;
+        margin: 0 auto 30px auto;
+      }
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+      }
+      .btn-dark, .btn-light {
+        padding: 14px 28px;
+        border-radius: 12px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: none;
+        font-size: 16px;
+      }
+      .btn-dark {
+        background-color: #121212;
+        color: #ffffff;
+      }
+      .btn-dark:hover {
+        background-color: #000000;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+      .btn-light {
+        background-color: #ffffff;
+        color: #121212;
+      }
+      .btn-light:hover {
+        background-color: #f0f0f0;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      .btn-dark i, .btn-light i {
+        font-size: 18px;
+      }
+      .cta-image-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .cta-image-wrapper img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+        @media (max-width: 991.98px) {
+            .cta-section {
+                padding: 50px 30px 0 30px;
+                margin: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 34px;
+            }
+
+            .cta-image-wrapper {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .cta-section {
+                padding: 40px 24px 0 24px;
+                margin: 50px 15px;
+                border-radius: 30px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .cta-section p {
+                font-size: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 320px;
+                gap: 12px;
+                margin: 0 auto 30px auto;
+            }
+
+            .cta-image-wrapper {
+                max-width: 420px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .cta-section {
+                padding: 35px 20px 0 20px;
+                border-radius: 25px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            .cta-section p {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .cta-buttons {
+                max-width: 280px;
+                margin-bottom: 25px;
+            }
+
+            .cta-image-wrapper {
+                max-width: 340px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-bisa" id="navbar">
+        <div class="container">
+
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2" id="navbar-logo">
+                <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                <div class="logo-text">
+                    <span class="brand-name">BISA<span class="titik">.</span></span>
+                    <span class="brand-sub">Academy</span>
+                </div>
+            </a>
+
+            <!-- navbar mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="program.html" id="nav-program">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#layanan" id="nav-layanan">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentang.html" id="nav-tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimoni" id="nav-testimoni">Testimoni</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 navbar-actions">
+                    <a href="formulir-pendaftaran.html" class="btn btn-outline-secondary btn-masuk"
+                        id="btn-signup">Masuk</a>
+                    <a href="#kontak" class="btn btn-primary btn-hubungi" id="btn-hubungi">Hubungi Kami</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- div untuk memberikan jarak (alternatifnya pakai padding-top: 72px;)  -->
+    <div style="height: 72px;"></div>
+
+    <!-- konten halaman mulai dari sini -->
+    <main>
+        <section class="program-hero">
+            <div class="container text-center">
+                <div class="program-badge">
+                    <span><i class="bi bi-star-fill me-1"></i> TERBATAS &bull; GRATIS &bull; 45 MENIT</span>
+                </div>
+                <h1 class="program-title">Program Unggulan Kami</h1>
+                <p class="program-desc">
+                    BISA Academy hadir dengan kurikulum yang dirancang khusus untuk mempercepat pertumbuhan profesional
+                    dan efisiensi operasional organisasi melalui metode pembelajaran berbasis hasil yang terukur.
+                </p>
+                <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3">
+                    <div class="stat-card">
+                        <i class="bi bi-mortarboard stat-icon icon-alumni"></i>
+                        <span class="stat-text">+500 Alumni</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="bi bi-patch-check-fill stat-icon icon-kurikulum"></i>
+                        <span class="stat-text">Kurikulum Teruji</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="bi bi-star-fill stat-icon icon-rating"></i>
+                        <span class="stat-text">4.9/5.0 Rating</span>
+                    </div>
+                </div>
+        </section>
+
+        <section class="program-list-section">
+            <div class="container">
+                <div class="filter-search-bar">
+                    <div class="filter-tabs">
+                        <button class="filter-btn active" data-category="all">Semua Program</button>
+                        <button class="filter-btn" data-category="bisnis-operasional">Bisnis & Operasional</button>
+                        <button class="filter-btn" data-category="komunikasi-sales">Komunikasi & Sales</button>
+                        <button class="filter-btn" data-category="sosial-literasi">Sosial & Literasi</button>
+                    </div>
+                    <div class="search-wrapper">
+                        <span class="search-icon-btn"><i class="bi bi-search"></i></span>
+                        <input type="text" id="search-program" class="search-input" placeholder="Cari Program">
+                    </div>
+                </div>
+                <div id="program-cards-container" class="row row-cols-1 row-cols-md-2 g-4">
+                </div>
+        </section>
+
+        <section class="hubungi-kami cta-section" aria-labelledby="hubungi-kami-title">
+          <h2 id="hubungi-kami-title">
+            Siap Memulai Perjalanan Transformasi Bersama BISA Academy?
+          </h2>
+          <p class="text-wrapper-23">
+            Konsultasikan kebutuhan pelatihan dan pengembangan tim Anda. Gratis, tanpa komitmen.
+          </p>
+          <div class="cta-buttons">
+            <a href="#" class="btn-dark" aria-label="Hubungi Kami melalui WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+              <span>Hubungi Kami</span>
+            </a>
+            <a href="formulir-pendaftaran.html" class="btn-light" aria-label="Konsultasi Gratis">
+              <i class="far fa-calendar-alt"></i>
+              <span>Konsultasi Gratis</span>
+            </a>
+          </div>
+          <div class="cta-image-wrapper">
+            <img class="image" src="assets/img/people.png" alt="Tim BISA Academy" width="600" height="600"/>
+          </div>
+        </section>
+    </main>
+
+    <footer class="footer-bisa">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5">
+                    <a href="index.html" class="d-flex align-items-center gap-2 mb-3 text-decoration-none">
+                        <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                        <div class="logo-text">
+                            <span class="brand-name">BISA<span class="titik">.</span></span>
+                            <span class="brand-sub">Academy</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc mb-4">
+                        Lembaga pelatihan & konsultasi bisnis yang membantu early founders dan UMKM Indonesia tumbuh
+                        dari nol hingga autopilot.
+                    </p>
+
+                    <h5 class="subscribe-title mb-2">Subscribe Email</h5>
+                    <p class="subscribe-desc mb-3">Temukan insight bisnis dan transformasi digital melalui update nawala
+                        dan artikel terbaru kami</p>
+
+                    <form class="subscribe-form d-flex">
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0 rounded-start-pill"><i
+                                    class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control bg-light border-start-0 rounded-end-pill px-0"
+                                placeholder="Masukkan email anda" required>
+                        </div>
+                        <button class="btn btn-primary btn-subscribe rounded-pill ms-2 px-4"
+                            type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-4">
+                    <h5 class="footer-title">PROGRAM</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Communication for Team</a></li>
+                        <li><a href="#">Communication for Sales</a></li>
+                        <li><a href="#">Harmonic System</a></li>
+                        <li><a href="#">Program CSR Pendidikan</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-4">
+                    <h5 class="footer-title">KONTAK</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li>Jl. Danau Maninjau No. 39, Surabaya, Kec. Kedaton, Kota Bandar Lampung, Lampung 35122</li>
+                        <li>(+62)822 7979 3385</li>
+                        <li>hbisaacademyindonesia@gmail.com</li>
+                    </ul>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="footer-bottom mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="mb-2 mb-md-0">Copyright &copy; 2026 BISA Academy Indonesia. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms & Conditions</a> <span class="mx-2">•</span> <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Array isi card program
+        const programs = [
+            {
+                id: "PROGRAM 01",
+                title: "Harmony System",
+                category: "bisnis-operasional",
+                image: "assets/img/harmony_system.png",
+                description: "Sistem operasional untuk mengidentifikasi dan mengatasi 6 masalah mendasar organisasi langsung dari akar penyebabnya, bukan sekadar memperbaiki gejala, agar masalah hilang secara permanen.",
+                bullets: [
+                    "Audit efisiensi operasional menyeluruh",
+                    "Standardisasi prosedur kerja (SOP)",
+                    "Pemetaan KPI berbasis hasil"
+                ]
+            },
+            {
+                id: "PROGRAM 02",
+                title: "Program CSR Berbasis Literasi",
+                category: "sosial-literasi",
+                image: "assets/img/csr_literasi.png",
+                description: "Wujudkan tanggung jawab sosial perusahaan melalui program pendidikan dan literasi yang terstruktur, berdampak, dan dapat dipertanggungjawabkan kepada pemangku kepentingan.",
+                bullets: [
+                    "Perancangan program CSR pendidikan yang terukur",
+                    "Pelatihan literasi untuk komunitas sasaran",
+                    "Monitoring & evaluasi dampak program CSR",
+                    "Pelaporan dampak sosial yang transparan"
+                ]
+            },
+            {
+                id: "PROGRAM 03",
+                title: "Communication for Team",
+                category: "komunikasi-sales",
+                image: "assets/img/communication_team.png",
+                description: "Pelatihan komunikasi efektif yang dirancang untuk membangun sinergi tim, mengurangi miskomunikasi, dan menciptakan lingkungan kerja yang kolaboratif dan produktif.",
+                bullets: [
+                    "Meningkatkan kualitas komunikasi tim",
+                    "Membangun kepercayaan dan keterbukaan antar anggota",
+                    "Mengelola konflik dengan pendekatan komunikasi konstruktif",
+                    "Menciptakan budaya kerja yang harmonis dan produktif"
+                ]
+            },
+            {
+                id: "PROGRAM 04",
+                title: "Communication for Sales",
+                category: "komunikasi-sales",
+                image: "assets/img/communication_sales.png",
+                description: "Tingkatkan performa tim penjualan melalui teknik komunikasi persuasif yang membangun kepercayaan dan mempercepat proses closing.",
+                bullets: [
+                    "Menguasai teknik komunikasi persuasif dan storytelling",
+                    "Meningkatkan kemampuan membangun kepercayaan klien",
+                    "Mengatasi keberatan dengan komunikasi yang tepat",
+                    "Meningkatkan conversion rate dan angka keberhasilan"
+                ]
+            }
+        ];
+
+        let selectedCategory = "all";
+        let searchQuery = "";
+
+        const container = document.getElementById("program-cards-container");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const searchInput = document.getElementById("search-program");
+
+        function renderPrograms() {
+            // filter program di tiap pilihannya
+            const filtered = programs.filter(prog => {
+                const matchesCategory = selectedCategory === "all" || prog.category === selectedCategory;
+                const matchesSearch = prog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    prog.description.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCategory && matchesSearch;
+            });
+
+            // jika program yang dicari tidak ada
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-12 text-center py-5" style="width: 100% !important; flex: 0 0 100% !important;">
+                        <div class="text-muted">
+                            <i class="bi bi-search" style="font-size: 48px; display: block; margin-bottom: 16px;"></i>
+                            <h5>Program tidak ditemukan</h5>
+                            <p>Coba gunakan kata kunci pencarian lain atau pilih kategori yang berbeda.</p>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = filtered.map(prog => {
+                const bulletsHTML = prog.bullets.map(bullet => `
+                    <li class="card-bullet-item">
+                        <i class="bi bi-check-circle"></i>
+                        <span>${bullet}</span>
+                    </li>
+                `).join('');
+
+                return `
+                    <div class="col">
+                        <div class="program-card">
+                            <div class="card-img-wrapper">
+                                <span class="card-badge">${prog.id}</span>
+                                <img src="${prog.image}" alt="${prog.title}">
+                            </div>
+                            <h3 class="card-title">${prog.title}</h3>
+                            <p class="card-desc">${prog.description}</p>
+                            <ul class="card-bullets">
+                                ${bulletsHTML}
+                            </ul>
+                            <a href="#" class="card-btn">
+                                Lihat Detail <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                filterBtns.forEach(b => b.classList.remove("active"));
+
+                btn.classList.add("active");
+
+                selectedCategory = btn.getAttribute("data-category");
+                renderPrograms();
+            });
+        });
+
+        searchInput.addEventListener("input", (e) => {
+            searchQuery = e.target.value;
+            renderPrograms();
+        });
+
+        renderPrograms();
+    </script>
+</body>
+
+</html>

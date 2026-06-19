@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Formulir Pendaftaran - BISA Academy">
-    <title>Formulir Pendaftaran - BISA Academy</title>
+    <title>BISA Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-      /* Hero Section Background Wrapper */
       .hero-section {
         background-color: #EEF4FC;
         padding: 60px 0 80px 0;
@@ -51,8 +50,6 @@
         color: #414750;
         max-width: 768px;
       }
-
-      /* --- VISI MISI SECTION --- */
       .visimisi-section {
         max-width: 1120px;
         margin: 0 auto 80px auto;
@@ -111,13 +108,11 @@
         margin: 0;
         opacity: 0.95;
       }
-
-      /* --- CALL TO ACTION (CTA) SECTION --- */
       .cta-section {
         max-width: 1120px;
         margin: 80px auto;
         padding: 60px 40px 0 40px;
-        background: linear-gradient(180deg, rgba(143, 203, 230, 0.4) 0%, rgba(41, 108, 169, 0.9) 100%);
+        background: linear-gradient(180deg, rgba(143, 203, 230, 0.15) 0%, rgba(41, 108, 169, 0.9) 100%);
         border-radius: 40px;
         text-align: center;
         position: relative;
@@ -186,8 +181,6 @@
         height: auto;
         display: block;
       }
-
-      /* Responsive */
       @media (max-width: 768px) {
         .hero-section {
           padding: 40px 0 60px 0;
@@ -202,6 +195,76 @@
           font-size: 16px;
         }
       }
+
+      @media (max-width: 991.98px) {
+            .cta-section {
+                padding: 50px 30px 0 30px;
+                margin: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 34px;
+            }
+
+            .cta-image-wrapper {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .cta-section {
+                padding: 40px 24px 0 24px;
+                margin: 50px 15px;
+                border-radius: 30px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .cta-section p {
+                font-size: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 320px;
+                gap: 12px;
+                margin: 0 auto 30px auto;
+            }
+
+            .cta-image-wrapper {
+                max-width: 420px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .cta-section {
+                padding: 35px 20px 0 20px;
+                border-radius: 25px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            .cta-section p {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .cta-buttons {
+                max-width: 280px;
+                margin-bottom: 25px;
+            }
+
+            .cta-image-wrapper {
+                max-width: 340px;
+            }
+        }
     </style>
   </head>
   <body>
@@ -225,16 +288,16 @@
 
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#program" id="nav-program">Program</a>
+                        <a class="nav-link" href="program.html" id="nav-program">Program</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#layanan" id="nav-layanan">Layanan</a>
+                        <a class="nav-link" href="#layanan" id="nav-layanan">Layanan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="tentang.html" id="nav-tentang">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#testimoni" id="nav-testimoni">Testimoni</a>
+                        <a class="nav-link" href="#testimoni" id="nav-testimoni">Testimoni</a>
                     </li>
                 </ul>
 
@@ -304,7 +367,7 @@
             </a>
           </div>
           <div class="cta-image-wrapper">
-            <img class="image" src="assets/img/image8.png" alt="Tim BISA Academy" width="600" height="600"/>
+            <img class="image" src="assets/img/people.png" alt="Tim BISA Academy" width="600" height="600"/>
           </div>
         </section>
       </main>
