@@ -105,6 +105,15 @@ a {
   width: calc(100% - 32px);
 }
 
+.navbar-bisa .nav-link.active {
+  color: #296CA9;
+  font-weight: 600;
+}
+
+.navbar-bisa .nav-link.active::after {
+  width: calc(100% - 32px);
+}
+
 .btn-masuk {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 14px;

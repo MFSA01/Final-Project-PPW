@@ -12,7 +12,6 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
         .program-hero {
@@ -26,7 +25,7 @@
         .program-badge {
             display: inline-block;
             background-color: #FCF6C2;
-            color: #7C794E;
+            color: #5E5B37;
             font-size: 13px;
             font-weight: 700;
             padding: 8px 18px;
@@ -307,6 +306,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            color: #ffffff;
         }
 
         .cta-section h2 {
@@ -462,7 +462,7 @@
         <div class="container">
 
             <a href="index.html" class="navbar-brand d-flex align-items-center gap-2" id="navbar-logo">
-                <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image" width="45" height="45">
                 <div class="logo-text">
                     <span class="brand-name">BISA<span class="titik">.</span></span>
                     <span class="brand-sub">Academy</span>
@@ -538,6 +538,7 @@
 
         <section class="program-list-section">
             <div class="container">
+                <h2 class="visually-hidden">Daftar Program Kami</h2>
                 <div class="filter-search-bar">
                     <div class="filter-tabs">
                         <button class="filter-btn active" data-category="all">Semua Program</button>
@@ -563,16 +564,16 @@
             </p>
             <div class="cta-buttons">
                 <a href="#" class="btn-dark" aria-label="Hubungi Kami melalui WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
+                    <i class="bi bi-whatsapp"></i>
                     <span>Hubungi Kami</span>
                 </a>
                 <a href="formulir-pendaftaran.html" class="btn-light" aria-label="Konsultasi Gratis">
-                    <i class="far fa-calendar-alt"></i>
+                    <i class="bi bi-calendar-event"></i>
                     <span>Konsultasi Gratis</span>
                 </a>
             </div>
             <div class="cta-image-wrapper">
-                <img class="image" src="assets/img/people.png" alt="Tim BISA Academy" width="600" height="600" />
+                <img class="image" src="assets/img/people.webp" alt="Tim BISA Academy" width="600" height="600" loading="lazy" />
             </div>
         </section>
     </main>
@@ -582,7 +583,7 @@
             <div class="row gy-4">
                 <div class="col-lg-5">
                     <a href="index.html" class="d-flex align-items-center gap-2 mb-3 text-decoration-none">
-                        <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                        <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image" width="45" height="45">
                         <div class="logo-text">
                             <span class="brand-name">BISA<span class="titik">.</span></span>
                             <span class="brand-sub">Academy</span>
@@ -593,7 +594,7 @@
                         dari nol hingga autopilot.
                     </p>
 
-                    <h5 class="subscribe-title mb-2">Subscribe Email</h5>
+                    <h3 class="subscribe-title mb-2">Subscribe Email</h3>
                     <p class="subscribe-desc mb-3">Temukan insight bisnis dan transformasi digital melalui update nawala
                         dan artikel terbaru kami</p>
 
@@ -612,7 +613,7 @@
                 <div class="col-lg-1"></div>
 
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-4">
-                    <h5 class="footer-title">PROGRAM</h5>
+                    <h3 class="footer-title">PROGRAM</h3>
                     <ul class="footer-links list-unstyled">
                         <li><a href="#">Communication for Team</a></li>
                         <li><a href="#">Communication for Sales</a></li>
@@ -622,17 +623,17 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 mt-4 mt-lg-4">
-                    <h5 class="footer-title">KONTAK</h5>
+                    <h3 class="footer-title">KONTAK</h3>
                     <ul class="footer-contact list-unstyled">
                         <li>Jl. Danau Maninjau No. 39, Surabaya, Kec. Kedaton, Kota Bandar Lampung, Lampung 35122</li>
                         <li>(+62)822 7979 3385</li>
                         <li>hbisaacademyindonesia@gmail.com</li>
                     </ul>
                     <div class="social-links mt-3">
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="LinkedIn BISA Academy"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram BISA Academy"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook BISA Academy"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter / X BISA Academy"><i class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
             </div>
@@ -646,141 +647,9 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <script>
-        // Array isi card program
-        const programs = [
-            {
-                id: "PROGRAM 01",
-                title: "Harmony System",
-                category: "bisnis-operasional",
-                image: "assets/img/harmony_system.png",
-                description: "Sistem operasional untuk mengidentifikasi dan mengatasi 6 masalah mendasar organisasi langsung dari akar penyebabnya, bukan sekadar memperbaiki gejala, agar masalah hilang secara permanen.",
-                bullets: [
-                    "Audit efisiensi operasional menyeluruh",
-                    "Standardisasi prosedur kerja (SOP)",
-                    "Pemetaan KPI berbasis hasil"
-                ]
-            },
-            {
-                id: "PROGRAM 02",
-                title: "Program CSR Berbasis Literasi",
-                category: "sosial-literasi",
-                image: "assets/img/csr_literasi.png",
-                description: "Wujudkan tanggung jawab sosial perusahaan melalui program pendidikan dan literasi yang terstruktur, berdampak, dan dapat dipertanggungjawabkan kepada pemangku kepentingan.",
-                bullets: [
-                    "Perancangan program CSR pendidikan yang terukur",
-                    "Pelatihan literasi untuk komunitas sasaran",
-                    "Monitoring & evaluasi dampak program CSR",
-                    "Pelaporan dampak sosial yang transparan"
-                ]
-            },
-            {
-                id: "PROGRAM 03",
-                title: "Communication for Team",
-                category: "komunikasi-sales",
-                image: "assets/img/communication_team.png",
-                description: "Pelatihan komunikasi efektif yang dirancang untuk membangun sinergi tim, mengurangi miskomunikasi, dan menciptakan lingkungan kerja yang kolaboratif dan produktif.",
-                bullets: [
-                    "Meningkatkan kualitas komunikasi tim",
-                    "Membangun kepercayaan dan keterbukaan antar anggota",
-                    "Mengelola konflik dengan pendekatan komunikasi konstruktif",
-                    "Menciptakan budaya kerja yang harmonis dan produktif"
-                ]
-            },
-            {
-                id: "PROGRAM 04",
-                title: "Communication for Sales",
-                category: "komunikasi-sales",
-                image: "assets/img/communication_sales.png",
-                description: "Tingkatkan performa tim penjualan melalui teknik komunikasi persuasif yang membangun kepercayaan dan mempercepat proses closing.",
-                bullets: [
-                    "Menguasai teknik komunikasi persuasif dan storytelling",
-                    "Meningkatkan kemampuan membangun kepercayaan klien",
-                    "Mengatasi keberatan dengan komunikasi yang tepat",
-                    "Meningkatkan conversion rate dan angka keberhasilan"
-                ]
-            }
-        ];
-
-        let selectedCategory = "all";
-        let searchQuery = "";
-
-        const container = document.getElementById("program-cards-container");
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const searchInput = document.getElementById("search-program");
-
-        function renderPrograms() {
-            // filter program di tiap pilihannya
-            const filtered = programs.filter(prog => {
-                const matchesCategory = selectedCategory === "all" || prog.category === selectedCategory;
-                const matchesSearch = prog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                    prog.description.toLowerCase().includes(searchQuery.toLowerCase());
-                return matchesCategory && matchesSearch;
-            });
-
-            // jika program yang dicari tidak ada
-            if (filtered.length === 0) {
-                container.innerHTML = `
-                    <div class="col-12 text-center py-5" style="width: 100% !important; flex: 0 0 100% !important;">
-                        <div class="text-muted">
-                            <i class="bi bi-search" style="font-size: 48px; display: block; margin-bottom: 16px;"></i>
-                            <h5>Program tidak ditemukan</h5>
-                            <p>Coba gunakan kata kunci pencarian lain atau pilih kategori yang berbeda.</p>
-                        </div>
-                    </div>
-                `;
-                return;
-            }
-
-            container.innerHTML = filtered.map(prog => {
-                const bulletsHTML = prog.bullets.map(bullet => `
-                    <li class="card-bullet-item">
-                        <i class="bi bi-check-circle"></i>
-                        <span>${bullet}</span>
-                    </li>
-                `).join('');
-
-                return `
-                    <div class="col">
-                        <div class="program-card">
-                            <div class="card-img-wrapper">
-                                <span class="card-badge">${prog.id}</span>
-                                <img src="${prog.image}" alt="${prog.title}">
-                            </div>
-                            <h3 class="card-title">${prog.title}</h3>
-                            <p class="card-desc">${prog.description}</p>
-                            <ul class="card-bullets">
-                                ${bulletsHTML}
-                            </ul>
-                            <a href="#" class="card-btn">
-                                Lihat Detail <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-        }
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener("click", () => {
-                filterBtns.forEach(b => b.classList.remove("active"));
-
-                btn.classList.add("active");
-
-                selectedCategory = btn.getAttribute("data-category");
-                renderPrograms();
-            });
-        });
-
-        searchInput.addEventListener("input", (e) => {
-            searchQuery = e.target.value;
-            renderPrograms();
-        });
-
-        renderPrograms();
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

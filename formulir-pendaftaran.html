@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,570 @@
     <title>BISA Academy</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-section {
+            padding: 60px 0 80px;
+            background: linear-gradient(135deg, #eaf2fb 0%, #f0f4f8 50%, #f8f9fb 100%);
+            min-height: calc(100vh - 72px);
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-badge span {
+            display: inline-block;
+            background: #FCF6C2;
+            border: 1px solid #d6e4f0;
+            color: #5E5B37;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 8px 18px;
+            border-radius: 50px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 600;
+            line-height: 1.15;
+            color: #0f172a;
+        }
+
+        .hero-title .text-highlight {
+            color: #296CA9;
+        }
+
+        .hero-desc {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.7;
+            max-width: 420px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #334155;
+            transition: all 0.2s ease;
+        }
+
+        .hero-tag:hover {
+            border-color: #296CA9;
+            color: #296CA9;
+            transform: translateY(-1px);
+        }
+
+        .form-card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid #e8ecf1;
+        }
+
+        .form-card-header {
+            background: linear-gradient(135deg, #296CA9 0%, #4a9fd4 100%);
+            padding: 28px 32px 24px;
+            color: #ffffff;
+        }
+
+        .form-card-header h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .form-card-header p {
+            font-size: 13.5px;
+            opacity: 0.95;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .form-card-body {
+            padding: 28px 32px 32px;
+        }
+
+        .stepper {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .stepper-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            flex: 0 0 auto;
+            z-index: 1;
+        }
+
+        .stepper-circle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            background: #e8ecf1;
+            color: #94a3b8;
+            border: 2px solid #e8ecf1;
+            transition: all 0.3s ease;
+        }
+
+        .stepper-item.active .stepper-circle {
+            background: #296CA9;
+            color: #ffffff;
+            border-color: #296CA9;
+            box-shadow: 0 2px 10px rgba(41, 108, 169, 0.35);
+        }
+
+        .stepper-item.completed .stepper-circle {
+            background: #15803d;
+            color: #ffffff;
+            border-color: #15803d;
+        }
+
+        .stepper-label {
+            font-size: 12.5px;
+            font-weight: 600;
+            color: #94a3b8;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .stepper-item.active .stepper-label {
+            color: #296CA9;
+        }
+
+        .stepper-item.completed .stepper-label {
+            color: #15803d;
+        }
+
+        .stepper-line {
+            flex: 1;
+            height: 3px;
+            background: #e8ecf1;
+            border-radius: 2px;
+            margin-top: 17px;
+            transition: background 0.3s ease;
+        }
+
+        .stepper-line.completed {
+            background: #22c55e;
+        }
+
+        .step-section-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            color: #475569;
+            text-transform: uppercase;
+        }
+
+        .section-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 3px;
+            background: #cbd5e1;
+            display: inline-block;
+        }
+
+        .form-step {
+            display: none;
+            animation: fadeSlideIn 0.35s ease;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .form-card .form-label {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+
+        .form-card .form-control,
+        .form-card .form-select {
+            border-radius: 10px;
+            border: 1.5px solid #d6e0eb;
+            padding: 10px 14px;
+            font-size: 14px;
+            color: #1e293b;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .form-card .form-control:focus,
+        .form-card .form-select:focus {
+            border-color: #296CA9;
+            box-shadow: 0 0 0 3px rgba(41, 108, 169, 0.12);
+        }
+
+        .form-card .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .form-card .form-control.is-invalid,
+        .form-card .form-select.is-invalid {
+            border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+
+        .metode-option {
+            background: #f8fafc;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 12px 18px;
+            flex: 1;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .metode-option:hover {
+            border-color: #296CA9;
+            background: #eff6ff;
+        }
+
+        .metode-option .form-check-label {
+            font-size: 13.5px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-outline-omset {
+            border: 1.5px solid #d6e0eb;
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: #64748b;
+            font-size: 14.5px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            background-color: #ffffff;
+            cursor: pointer;
+        }
+
+        .btn-check:checked+.btn-outline-omset,
+        .btn-outline-omset:hover {
+            border-color: #296CA9;
+            color: #296CA9;
+            background-color: #eff6ff;
+        }
+
+        .question-card {
+            border: 1.5px solid #e8ecf1;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            background-color: #ffffff;
+            transition: border-color 0.2s ease;
+        }
+
+        .question-text {
+            font-size: 14px;
+            color: #1e293b;
+            margin: 0;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .question-options {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .btn-outline-ya,
+        .btn-outline-tidak {
+            border: 1.5px solid #d6e0eb;
+            border-radius: 6px;
+            padding: 6px 16px;
+            font-size: 13.5px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+            background-color: #ffffff;
+            cursor: pointer;
+            color: #64748b;
+        }
+
+        .btn-outline-ya:hover {
+            border-color: #22c55e;
+            color: #22c55e;
+            background-color: #f0fdf4;
+        }
+
+        .btn-outline-tidak:hover {
+            border-color: #ef4444;
+            color: #ef4444;
+            background-color: #fef2f2;
+        }
+
+        .btn-check:checked+.btn-outline-ya {
+            background-color: #f0fdf4;
+            border-color: #22c55e;
+            color: #166534;
+        }
+
+        .btn-check:checked+.btn-outline-ya i {
+            color: #166534;
+        }
+
+        .btn-check:checked+.btn-outline-tidak {
+            background-color: #fef2f2;
+            border-color: #ef4444;
+            color: #dc2626;
+        }
+
+        .btn-check:checked+.btn-outline-tidak i {
+            color: #dc2626;
+        }
+
+        .form-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 20px;
+        }
+
+        .btn-kembali {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 10px;
+            border: 1.5px solid #cbd5e1 !important;
+            color: #475569 !important;
+            background: transparent !important;
+            transition: all 0.25s ease;
+        }
+
+        .btn-kembali:hover {
+            border-color: #296CA9 !important;
+            color: #296CA9 !important;
+            background: #eff6ff !important;
+        }
+
+        .btn-lanjut {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 28px;
+            border-radius: 10px;
+            background: #296CA9 !important;
+            border-color: #296CA9 !important;
+            color: #ffffff !important;
+            box-shadow: 0 2px 8px rgba(41, 108, 169, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .btn-lanjut:hover {
+            background: #1e5a8f !important;
+            border-color: #1e5a8f !important;
+            box-shadow: 0 4px 14px rgba(41, 108, 169, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .btn-lanjut {
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-lanjut:hover {
+            transform: translateY(-1px);
+        }
+
+        .btn-kirim {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 28px;
+            border-radius: 10px;
+            background: #22c55e !important;
+            border-color: #22c55e !important;
+            color: #ffffff !important;
+            box-shadow: 0 2px 8px rgba(34, 197, 94, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .btn-kirim:hover {
+            background: #16a34a !important;
+            border-color: #16a34a !important;
+            box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+            transform: translateY(-1px);
+        }
+
+        .review-section {
+            background: #f8fafc;
+            border: 1px solid #e8ecf1;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-bottom: 14px;
+        }
+
+        .review-section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #296CA9;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e8ecf1;
+        }
+
+        .review-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 6px 0;
+            gap: 12px;
+        }
+
+        .review-label {
+            font-size: 13px;
+            color: #64748b;
+            font-weight: 500;
+            flex: 0 0 140px;
+        }
+
+        .review-value {
+            font-size: 13.5px;
+            color: #1e293b;
+            font-weight: 600;
+            text-align: right;
+            flex: 1;
+            word-break: break-word;
+        }
+
+        .success-icon {
+            font-size: 52px;
+            animation: popIn 0.4s ease;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            70% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .hero-section {
+                padding: 40px 0 60px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .form-card-body {
+                padding: 20px;
+            }
+
+            .form-card-header {
+                padding: 22px 20px 18px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-desc {
+                font-size: 14px;
+            }
+
+            .stepper-label {
+                font-size: 11px;
+            }
+
+            .stepper-circle {
+                width: 30px;
+                height: 30px;
+                font-size: 12px;
+            }
+
+            .form-card-body {
+                padding: 16px;
+            }
+
+            .review-row {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .review-value {
+                text-align: left;
+            }
+
+            .metode-option {
+                padding: 10px 14px;
+            }
+
+            .form-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .form-nav .ms-auto {
+                width: 100%;
+            }
+
+            .form-nav .btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,7 +579,7 @@
         <div class="container">
 
             <a href="index.html" class="navbar-brand d-flex align-items-center gap-2" id="navbar-logo">
-                <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image" width="45" height="45">
                 <div class="logo-text">
                     <span class="brand-name">BISA<span class="titik">.</span></span>
                     <span class="brand-sub">Academy</span>
@@ -26,7 +587,8 @@
             </a>
 
             <!-- navbar mobiloe -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -49,8 +611,8 @@
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-2 navbar-actions">
-                    <a href="formulir-pendaftaran.html" class="btn btn-outline-secondary btn-masuk" id="btn-signup">Masuk</a>
-                    <a href="index.html#kontak" class="btn btn-primary btn-hubungi" id="btn-hubungi">Hubungi Kami</a>
+                    <a href="" class="btn btn-outline-secondary btn-masuk" id="btn-signup">Masuk</a>
+                    <a href="#hubungi-kami-title" class="btn btn-primary btn-hubungi" id="btn-hubungi">Hubungi Kami</a>
                 </div>
             </div>
         </div>
@@ -58,7 +620,8 @@
 
     <div style="height: 72px;"></div>
     <!-- section hero -->
-    <section class="hero-section" id="hero-section">
+    <main>
+        <section class="hero-section" id="hero-section">
         <div class="container">
             <div class="row align-items-center gy-5">
                 <!-- Hero Teks -->
@@ -120,23 +683,34 @@
                                     </div>
                                     <div class="row g-3">
                                         <div class="col-md-6">
-                                            <label for="namaLengkap" class="form-label">Nama Lengkap <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="namaLengkap" placeholder="Nama lengkap anda" required>
+                                            <label for="namaLengkap" class="form-label">Nama Lengkap <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="namaLengkap"
+                                                placeholder="Nama lengkap anda" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="namaPerusahaan" class="form-label">Nama Perusahaan <span class="text-danger">*</span></label>
-                                            <input type="text" class="form-control" id="namaPerusahaan" placeholder="Nama bisnis/perusahaan" required>
+                                            <label for="namaPerusahaan" class="form-label">Nama Perusahaan <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="namaPerusahaan"
+                                                placeholder="Nama bisnis/perusahaan" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="noWhatsapp" class="form-label">No. WhatsApp <span class="text-danger">*</span></label>
+                                            <label for="noWhatsapp" class="form-label">No. WhatsApp <span
+                                                    class="text-danger">*</span></label>
                                             <div class="input-group">
-                                                <span class="input-group-text bg-white text-muted border-end-0 px-3" id="addon-wa" style="border-color: #d6e0eb; font-weight: 500; border-radius: 10px 0 0 10px;">+62</span>
-                                                <input type="text" class="form-control border-start-0 ps-0" id="noWhatsapp" placeholder="xxx-xxxx-xxxx" required style="border-radius: 0 10px 10px 0;">
+                                                <span class="input-group-text bg-white text-muted border-end-0 px-3"
+                                                    id="addon-wa"
+                                                    style="border-color: #d6e0eb; font-weight: 500; border-radius: 10px 0 0 10px;">+62</span>
+                                                <input type="text" class="form-control border-start-0 ps-0"
+                                                    id="noWhatsapp" placeholder="xxx-xxxx-xxxx" required
+                                                    style="border-radius: 0 10px 10px 0;">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="emailUtama" class="form-label">Email <span class="text-danger">*</span></label>
-                                            <input type="email" class="form-control" id="emailUtama" placeholder="example@bisnis.com" required>
+                                            <label for="emailUtama" class="form-label">Email <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="email" class="form-control" id="emailUtama"
+                                                placeholder="example@bisnis.com" required>
                                             <div class="invalid-feedback">masukkan email yang benar !</div>
                                         </div>
                                     </div>
@@ -146,7 +720,8 @@
                                 <div class="form-step" id="step-2">
                                     <div class="row g-4">
                                         <div class="col-12">
-                                            <label for="industriBisnis" class="form-label">Industri/Bidang Usaha <span class="text-danger">*</span></label>
+                                            <label for="industriBisnis" class="form-label">Industri/Bidang Usaha <span
+                                                    class="text-danger">*</span></label>
                                             <select class="form-select" id="industriBisnis" required>
                                                 <option value="" disabled selected>-- Pilih Industri --</option>
                                                 <option value="teknologi">Teknologi</option>
@@ -161,98 +736,145 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <label class="form-label mb-2">Omset Bisnis per Bulan <span class="text-danger">*</span></label>
+                                            <label class="form-label mb-2">Omset Bisnis per Bulan <span
+                                                    class="text-danger">*</span></label>
                                             <div class="row g-3">
                                                 <div class="col-md-6">
-                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset1" value="< Rp 10 Juta" required>
-                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset1">&lt; Rp 10 Juta</label>
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset1"
+                                                        value="< Rp 10 Juta" required>
+                                                    <label class="btn btn-outline-omset w-100 text-start"
+                                                        for="omset1">&lt; Rp 10 Juta</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset2" value="Rp 10 - 50 Juta">
-                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset2">Rp 10 - 50 Juta</label>
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset2"
+                                                        value="Rp 10 - 50 Juta">
+                                                    <label class="btn btn-outline-omset w-100 text-start"
+                                                        for="omset2">Rp 10 - 50 Juta</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset3" value="Rp 50 - 200 Juta">
-                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset3">Rp 50 - 200 Juta</label>
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset3"
+                                                        value="Rp 50 - 200 Juta">
+                                                    <label class="btn btn-outline-omset w-100 text-start"
+                                                        for="omset3">Rp 50 - 200 Juta</label>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset4" value="Rp 200 Juta - 1 M">
-                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset4">Rp 200 Juta - 1 M</label>
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset4"
+                                                        value="Rp 200 Juta - 1 M">
+                                                    <label class="btn btn-outline-omset w-100 text-start"
+                                                        for="omset4">Rp 200 Juta - 1 M</label>
                                                 </div>
                                                 <div class="col-12">
-                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset5" value="> Rp 1 Miliar">
-                                                    <label class="btn btn-outline-omset w-100 text-start" for="omset5">&gt; Rp 1 Miliar</label>
+                                                    <input type="radio" class="btn-check" name="omsetBisnis" id="omset5"
+                                                        value="> Rp 1 Miliar">
+                                                    <label class="btn btn-outline-omset w-100 text-start"
+                                                        for="omset5">&gt; Rp 1 Miliar</label>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="col-12 mt-4">
-                                            <label class="form-label mb-1">Kondisi Bisnis Saat Ini <span class="text-danger">*</span></label>
-                                            <p class="text-muted fst-italic" style="font-size: 13.5px; margin-bottom: 20px;">Jawab setiap pertanyaan dengan jujur sesuai kondisi bisnis kamu sekarang</p>
+                                            <label class="form-label mb-1">Kondisi Bisnis Saat Ini <span
+                                                    class="text-danger">*</span></label>
+                                            <p class="text-muted fst-italic"
+                                                style="font-size: 13.5px; margin-bottom: 20px;">Jawab setiap pertanyaan
+                                                dengan jujur sesuai kondisi bisnis kamu sekarang</p>
 
                                             <!-- Pertanyaan 1 -->
                                             <div class="question-card">
-                                                <p class="question-text">Apakah setidaknya 30-40% pelanggan membeli kembali atau secara aktif mereferensikan orang lain (dengan bukti)?</p>
+                                                <p class="question-text">Apakah setidaknya 30-40% pelanggan membeli
+                                                    kembali atau secara aktif mereferensikan orang lain (dengan bukti)?
+                                                </p>
                                                 <div class="question-options">
-                                                    <input type="radio" class="btn-check" name="q1" id="q1_ya" value="Ya" required>
-                                                    <label class="btn btn-outline-ya" for="q1_ya"><i class="bi bi-check-circle"></i> Ya</label>
-                                                    <input type="radio" class="btn-check" name="q1" id="q1_tidak" value="Tidak">
-                                                    <label class="btn btn-outline-tidak" for="q1_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                    <input type="radio" class="btn-check" name="q1" id="q1_ya"
+                                                        value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q1_ya"><i
+                                                            class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q1" id="q1_tidak"
+                                                        value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q1_tidak"><i
+                                                            class="bi bi-x-circle"></i> Tidak</label>
                                                 </div>
                                             </div>
 
                                             <!-- Pertanyaan 2 -->
                                             <div class="question-card">
-                                                <p class="question-text">Apakah harga saat ini menghasilkan keuntungan operasional setelah semua biaya langsung dan tidak langsung?</p>
+                                                <p class="question-text">Apakah harga saat ini menghasilkan keuntungan
+                                                    operasional setelah semua biaya langsung dan tidak langsung?</p>
                                                 <div class="question-options">
-                                                    <input type="radio" class="btn-check" name="q2" id="q2_ya" value="Ya" required>
-                                                    <label class="btn btn-outline-ya" for="q2_ya"><i class="bi bi-check-circle"></i> Ya</label>
-                                                    <input type="radio" class="btn-check" name="q2" id="q2_tidak" value="Tidak">
-                                                    <label class="btn btn-outline-tidak" for="q2_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                    <input type="radio" class="btn-check" name="q2" id="q2_ya"
+                                                        value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q2_ya"><i
+                                                            class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q2" id="q2_tidak"
+                                                        value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q2_tidak"><i
+                                                            class="bi bi-x-circle"></i> Tidak</label>
                                                 </div>
                                             </div>
 
                                             <!-- Pertanyaan 3 -->
                                             <div class="question-card">
-                                                <p class="question-text">Apakah perusahaan dapat dengan jelas mendeskripsikan pelanggan idealnya dan secara rutin menolak pelanggan yang tidak sesuai?</p>
+                                                <p class="question-text">Apakah perusahaan dapat dengan jelas
+                                                    mendeskripsikan pelanggan idealnya dan secara rutin menolak
+                                                    pelanggan yang tidak sesuai?</p>
                                                 <div class="question-options">
-                                                    <input type="radio" class="btn-check" name="q3" id="q3_ya" value="Ya" required>
-                                                    <label class="btn btn-outline-ya" for="q3_ya"><i class="bi bi-check-circle"></i> Ya</label>
-                                                    <input type="radio" class="btn-check" name="q3" id="q3_tidak" value="Tidak">
-                                                    <label class="btn btn-outline-tidak" for="q3_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                    <input type="radio" class="btn-check" name="q3" id="q3_ya"
+                                                        value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q3_ya"><i
+                                                            class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q3" id="q3_tidak"
+                                                        value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q3_tidak"><i
+                                                            class="bi bi-x-circle"></i> Tidak</label>
                                                 </div>
                                             </div>
 
                                             <!-- Pertanyaan 4 -->
                                             <div class="question-card">
-                                                <p class="question-text">Dalam setiap proses penjualan, apakah secara konsisten dijelaskan mengapa pelanggan memilih kita dibandingkan alternatif lain?</p>
+                                                <p class="question-text">Dalam setiap proses penjualan, apakah secara
+                                                    konsisten dijelaskan mengapa pelanggan memilih kita dibandingkan
+                                                    alternatif lain?</p>
                                                 <div class="question-options">
-                                                    <input type="radio" class="btn-check" name="q4" id="q4_ya" value="Ya" required>
-                                                    <label class="btn btn-outline-ya" for="q4_ya"><i class="bi bi-check-circle"></i> Ya</label>
-                                                    <input type="radio" class="btn-check" name="q4" id="q4_tidak" value="Tidak">
-                                                    <label class="btn btn-outline-tidak" for="q4_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                    <input type="radio" class="btn-check" name="q4" id="q4_ya"
+                                                        value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q4_ya"><i
+                                                            class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q4" id="q4_tidak"
+                                                        value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q4_tidak"><i
+                                                            class="bi bi-x-circle"></i> Tidak</label>
                                                 </div>
                                             </div>
 
                                             <!-- Pertanyaan 5 -->
                                             <div class="question-card">
-                                                <p class="question-text">Apakah pendapatan, biaya, keuntungan, dan posisi kas dapat dijelaskan tanpa perkiraan?</p>
+                                                <p class="question-text">Apakah pendapatan, biaya, keuntungan, dan
+                                                    posisi kas dapat dijelaskan tanpa perkiraan?</p>
                                                 <div class="question-options">
-                                                    <input type="radio" class="btn-check" name="q5" id="q5_ya" value="Ya" required>
-                                                    <label class="btn btn-outline-ya" for="q5_ya"><i class="bi bi-check-circle"></i> Ya</label>
-                                                    <input type="radio" class="btn-check" name="q5" id="q5_tidak" value="Tidak">
-                                                    <label class="btn btn-outline-tidak" for="q5_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                    <input type="radio" class="btn-check" name="q5" id="q5_ya"
+                                                        value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q5_ya"><i
+                                                            class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q5" id="q5_tidak"
+                                                        value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q5_tidak"><i
+                                                            class="bi bi-x-circle"></i> Tidak</label>
                                                 </div>
                                             </div>
 
                                             <!-- Pertanyaan 6 -->
                                             <div class="question-card">
-                                                <p class="question-text">Apakah operasional harian masih bergantung pada pemilik atau individu tertentu?</p>
+                                                <p class="question-text">Apakah operasional harian masih bergantung pada
+                                                    pemilik atau individu tertentu?</p>
                                                 <div class="question-options">
-                                                    <input type="radio" class="btn-check" name="q6" id="q6_ya" value="Ya" required>
-                                                    <label class="btn btn-outline-ya" for="q6_ya"><i class="bi bi-check-circle"></i> Ya</label>
-                                                    <input type="radio" class="btn-check" name="q6" id="q6_tidak" value="Tidak">
-                                                    <label class="btn btn-outline-tidak" for="q6_tidak"><i class="bi bi-x-circle"></i> Tidak</label>
+                                                    <input type="radio" class="btn-check" name="q6" id="q6_ya"
+                                                        value="Ya" required>
+                                                    <label class="btn btn-outline-ya" for="q6_ya"><i
+                                                            class="bi bi-check-circle"></i> Ya</label>
+                                                    <input type="radio" class="btn-check" name="q6" id="q6_tidak"
+                                                        value="Tidak">
+                                                    <label class="btn btn-outline-tidak" for="q6_tidak"><i
+                                                            class="bi bi-x-circle"></i> Tidak</label>
                                                 </div>
                                             </div>
 
@@ -267,11 +889,13 @@
                                     </div>
                                     <div class="row g-3">
                                         <div class="col-md-6">
-                                            <label for="tanggalKonsultasi" class="form-label">Tanggal Konsultasi <span class="text-danger">*</span></label>
+                                            <label for="tanggalKonsultasi" class="form-label">Tanggal Konsultasi <span
+                                                    class="text-danger">*</span></label>
                                             <input type="date" class="form-control" id="tanggalKonsultasi" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="waktuKonsultasi" class="form-label">Waktu Konsultasi <span class="text-danger">*</span></label>
+                                            <label for="waktuKonsultasi" class="form-label">Waktu Konsultasi <span
+                                                    class="text-danger">*</span></label>
                                             <select class="form-select" id="waktuKonsultasi" required>
                                                 <option value="" disabled selected>Pilih waktu</option>
                                                 <option value="09:00">09:00 - 09:45 WIB</option>
@@ -282,16 +906,19 @@
                                             </select>
                                         </div>
                                         <div class="col-12">
-                                            <label for="metodeSesi" class="form-label">Metode Sesi <span class="text-danger">*</span></label>
+                                            <label for="metodeSesi" class="form-label">Metode Sesi <span
+                                                    class="text-danger">*</span></label>
                                             <div class="d-flex gap-3 mt-1">
                                                 <div class="form-check metode-option">
-                                                    <input class="form-check-input" type="radio" name="metodeSesi" id="metodeOnline" value="online" checked required>
+                                                    <input class="form-check-input" type="radio" name="metodeSesi"
+                                                        id="metodeOnline" value="online" checked required>
                                                     <label class="form-check-label" for="metodeOnline">
                                                         <i class="bi bi-laptop"></i> Online (Zoom/Google Meet)
                                                     </label>
                                                 </div>
                                                 <div class="form-check metode-option">
-                                                    <input class="form-check-input" type="radio" name="metodeSesi" id="metodeOffline" value="offline">
+                                                    <input class="form-check-input" type="radio" name="metodeSesi"
+                                                        id="metodeOffline" value="offline">
                                                     <label class="form-check-label" for="metodeOffline">
                                                         <i class="bi bi-building"></i> Offline (Tatap Muka)
                                                     </label>
@@ -299,8 +926,10 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <label for="pertanyaan" class="form-label">Pertanyaan/Topik Konsultasi</label>
-                                            <textarea class="form-control" id="pertanyaan" rows="2" placeholder="Ceritakan tantangan bisnis yang ingin kamu bahas. Semakin detail, semakin baik persiapan tim kami..."></textarea>
+                                            <label for="pertanyaan" class="form-label">Pertanyaan/Topik
+                                                Konsultasi</label>
+                                            <textarea class="form-control" id="pertanyaan" rows="2"
+                                                placeholder="Ceritakan tantangan bisnis yang ingin kamu bahas. Semakin detail, semakin baik persiapan tim kami..."></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -310,14 +939,16 @@
                                     <div class="step-section-label mb-3">
                                         <span class="section-dot"></span> REVIEW
                                     </div>
-                                    <p class="text-muted mb-3" style="font-size: 14px;">Pastikan semua data sudah benar sebelum mengirim.</p>
+                                    <p class="text-muted mb-3" style="font-size: 14px;">Pastikan semua data sudah benar
+                                        sebelum mengirim.</p>
                                     <div class="review-summary" id="review-summary">
                                     </div>
                                 </div>
 
                                 <!-- Tombol Navigasi -->
                                 <div class="form-nav mt-4">
-                                    <button type="button" class="btn btn-outline-secondary btn-kembali d-none" id="btn-prev">
+                                    <button type="button" class="btn btn-outline-secondary btn-kembali d-none"
+                                        id="btn-prev">
                                         Kembali
                                     </button>
                                     <div class="ms-auto d-flex gap-2">
@@ -337,38 +968,44 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer class="footer-bisa">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-5">
                     <a href="index.html" class="d-flex align-items-center gap-2 mb-3 text-decoration-none">
-                        <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                        <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image" width="45" height="45">
                         <div class="logo-text">
                             <span class="brand-name">BISA<span class="titik">.</span></span>
                             <span class="brand-sub">Academy</span>
                         </div>
                     </a>
                     <p class="footer-desc mb-4">
-                        Lembaga pelatihan & konsultasi bisnis yang membantu early founders dan UMKM Indonesia tumbuh dari nol hingga autopilot.
+                        Lembaga pelatihan & konsultasi bisnis yang membantu early founders dan UMKM Indonesia tumbuh
+                        dari nol hingga autopilot.
                     </p>
-                    
-                    <h5 class="subscribe-title mb-2">Subscribe Email</h5>
-                    <p class="subscribe-desc mb-3">Temukan insight bisnis dan transformasi digital melalui update nawala dan artikel terbaru kami</p>
-                    
+
+                    <h3 class="subscribe-title mb-2">Subscribe Email</h3>
+                    <p class="subscribe-desc mb-3">Temukan insight bisnis dan transformasi digital melalui update nawala
+                        dan artikel terbaru kami</p>
+
                     <form class="subscribe-form d-flex">
                         <div class="input-group">
-                            <span class="input-group-text bg-light border-end-0 rounded-start-pill"><i class="bi bi-envelope"></i></span>
-                            <input type="email" class="form-control bg-light border-start-0 rounded-end-pill px-0" placeholder="Masukkan email anda" required>
+                            <span class="input-group-text bg-light border-end-0 rounded-start-pill"><i
+                                    class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control bg-light border-start-0 rounded-end-pill px-0"
+                                placeholder="Masukkan email anda" required>
                         </div>
-                        <button class="btn btn-primary btn-subscribe rounded-pill ms-2 px-4" type="submit">Subscribe</button>
+                        <button class="btn btn-primary btn-subscribe rounded-pill ms-2 px-4"
+                            type="submit">Subscribe</button>
                     </form>
                 </div>
 
                 <div class="col-lg-1"></div>
 
                 <div class="col-lg-3 col-md-6 mt-5 mt-lg-4">
-                    <h5 class="footer-title">PROGRAM</h5>
+                    <h3 class="footer-title">PROGRAM</h3>
                     <ul class="footer-links list-unstyled">
                         <li><a href="#">Communication for Team</a></li>
                         <li><a href="#">Communication for Sales</a></li>
@@ -378,21 +1015,22 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 mt-4 mt-lg-4">
-                    <h5 class="footer-title">KONTAK</h5>
+                    <h3 class="footer-title">KONTAK</h3>
                     <ul class="footer-contact list-unstyled">
                         <li>Jl. Danau Maninjau No. 39, Surabaya, Kec. Kedaton, Kota Bandar Lampung, Lampung 35122</li>
                         <li>(+62)822 7979 3385</li>
                         <li>hbisaacademyindonesia@gmail.com</li>
                     </ul>
                     <div class="social-links mt-3">
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="LinkedIn BISA Academy"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram BISA Academy"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook BISA Academy"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter / X BISA Academy"><i class="bi bi-twitter-x"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div
+                class="footer-bottom mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center">
                 <p class="mb-2 mb-md-0">Copyright &copy; 2026 BISA Academy Indonesia. All Rights Reserved.</p>
                 <div class="footer-legal">
                     <a href="#">Terms & Conditions</a> <span class="mx-2">•</span> <a href="#">Privacy Policy</a>
@@ -402,240 +1040,7 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        (function () {
-            const totalSteps = 4;
-            let currentStep = 1;
-
-            const form = document.getElementById('registrationForm');
-            const btnNext = document.getElementById('btn-next');
-            const btnPrev = document.getElementById('btn-prev');
-            const btnSubmit = document.getElementById('btn-submit');
-
-            function goToStep(step) {
-                document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
-                document.getElementById('step-' + step).classList.add('active');
-
-                document.querySelectorAll('.stepper-item').forEach(item => {
-                    const s = parseInt(item.dataset.step);
-                    item.classList.remove('active', 'completed');
-                    if (s === step) item.classList.add('active');
-                    else if (s < step) item.classList.add('completed');
-                });
-
-                for (let i = 1; i < totalSteps; i++) {
-                    const line = document.getElementById('line-' + i + '-' + (i + 1));
-                    if (line) {
-                        line.classList.toggle('completed', i < step);
-                    }
-                }
-
-                // Toggle tombol sebelumnya 
-                btnPrev.classList.toggle('d-none', step === 1);
-
-                // Toggle tombol selanjutnya / submit
-                if (step === totalSteps) {
-                    btnNext.classList.add('d-none');
-                    btnSubmit.classList.remove('d-none');
-                    populateReview();
-                } else {
-                    btnNext.classList.remove('d-none');
-                    btnSubmit.classList.add('d-none');
-                }
-
-                currentStep = step;
-            }
-
-            function validateStep(step) {
-                const stepEl = document.getElementById('step-' + step);
-                const inputs = stepEl.querySelectorAll('input[required]:not([type="radio"]), select[required], textarea[required]');
-                let valid = true;
-
-                inputs.forEach(input => {
-                    let isValidInput = true;
-                    if (!input.value.trim() || (input.tagName === 'SELECT' && input.value === '')) {
-                        isValidInput = false;
-                    }
-
-                    // Validasi email (wajib ada @ dan domain email)
-                    if (input.type === 'email' && input.value.trim()) {
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailRegex.test(input.value)) {
-                            isValidInput = false;
-                        }
-                    }
-
-                    if (!isValidInput) {
-                        input.classList.add('is-invalid');
-                        valid = false;
-                    } else {
-                        input.classList.remove('is-invalid');
-                    }
-                });
-
-                const radioNames = new Set();
-                stepEl.querySelectorAll('input[type="radio"][required]').forEach(r => radioNames.add(r.name));
-                
-                radioNames.forEach(name => {
-                    const checked = stepEl.querySelector('input[name="' + name + '"]:checked');
-                    if (!checked) {
-                        valid = false;
-                        const firstRadio = stepEl.querySelector('input[name="' + name + '"]');
-                        if (firstRadio && firstRadio.closest('.question-card')) {
-                             firstRadio.closest('.question-card').style.borderColor = '#ef4444';
-                        }
-                    } else {
-                        const checkedRadio = stepEl.querySelector('input[name="' + name + '"]:checked');
-                        if (checkedRadio && checkedRadio.closest('.question-card')) {
-                             checkedRadio.closest('.question-card').style.borderColor = '#e8ecf1';
-                        }
-                    }
-                });
-
-                return valid;
-            }
-            function populateReview() {
-                const getValue = (id) => {
-                    const el = document.getElementById(id);
-                    if (!el) return '-';
-                    if (el.tagName === 'SELECT') {
-                        return el.selectedIndex > 0 ? el.options[el.selectedIndex].text : '-';
-                    }
-                    return el.value || '-';
-                };
-
-                const metode = document.querySelector('input[name="metodeSesi"]:checked');
-
-                const sections = [
-                    {
-                        title: 'Data Diri',
-                        items: [
-                            ['Nama Lengkap', getValue('namaLengkap')],
-                            ['Nama Perusahaan', getValue('namaPerusahaan')],
-                            ['No. WhatsApp', '+62 ' + getValue('noWhatsapp')],
-                            ['Email', getValue('emailUtama')]
-                        ]
-                    },
-                    {
-                        title: 'Bisnis',
-                        items: [
-                            ['Industri/Bidang', getValue('industriBisnis')],
-                            ['Omset/Bulan', document.querySelector('input[name="omsetBisnis"]:checked')?.value || '-'],
-                            ['Q1: Pelanggan Beli Kembali', document.querySelector('input[name="q1"]:checked')?.value || '-'],
-                            ['Q2: Keuntungan Operasional', document.querySelector('input[name="q2"]:checked')?.value || '-'],
-                            ['Q3: Deskripsi Pelanggan', document.querySelector('input[name="q3"]:checked')?.value || '-'],
-                            ['Q4: Proses Penjualan', document.querySelector('input[name="q4"]:checked')?.value || '-'],
-                            ['Q5: Pendapatan & Kas', document.querySelector('input[name="q5"]:checked')?.value || '-'],
-                            ['Q6: Operasional Harian', document.querySelector('input[name="q6"]:checked')?.value || '-']
-                        ]
-                    },
-                    {
-                        title: 'Jadwal',
-                        items: [
-                            ['Tanggal', getValue('tanggalKonsultasi')],
-                            ['Waktu', getValue('waktuKonsultasi')],
-                            ['Metode', metode ? (metode.value === 'online' ? '<i class="bi bi-laptop"></i> Online' : '<i class="bi bi-building"></i> Offline') : '-'],
-                            ['Pertanyaan/Topik', getValue('pertanyaan')]
-                        ]
-                    }
-                ];
-
-                let html = '';
-                sections.forEach(section => {
-                    html += '<div class="review-section">';
-                    html += '<h6 class="review-section-title">' + section.title + '</h6>';
-                    section.items.forEach(([label, value]) => {
-                        html += '<div class="review-row">';
-                        html += '<span class="review-label">' + label + '</span>';
-                        html += '<span class="review-value">' + value + '</span>';
-                        html += '</div>';
-                    });
-                    html += '</div>';
-                });
-
-                document.getElementById('review-summary').innerHTML = html;
-            }
-            btnNext.addEventListener('click', () => {
-                if (validateStep(currentStep)) {
-                    goToStep(currentStep + 1);
-                }
-            });
-
-            btnPrev.addEventListener('click', () => {
-                if (currentStep > 1) goToStep(currentStep - 1);
-            });
-
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Jika user menekan Enter di input field sebelum step terakhir, arahkan ke step berikutnya
-                if (currentStep < totalSteps) {
-                    if (validateStep(currentStep)) {
-                        goToStep(currentStep + 1);
-                    }
-                    return;
-                }
-
-                // Validasi step terakhir
-                if (validateStep(currentStep)) {
-                    const cardBody = document.querySelector('.form-card-body');
-                    cardBody.innerHTML = `
-                        <div class="text-center py-5">
-                            <div class="success-icon mb-3 text-success"><i class="bi bi-check-circle-fill"></i></div>
-                            <h4 class="fw-bold mb-2">Pendaftaran Berhasil!</h4>
-                            <p class="text-muted">Terima kasih! Tim kami akan menghubungi Anda melalui WhatsApp/Email untuk konfirmasi jadwal sesi konsultasi.</p>
-                            <a href="index.html" class="btn btn-primary btn-hubungi mt-3">Kembali ke Beranda</a>
-                        </div>
-                    `;
-                }
-            });
-
-            form.addEventListener('input', (e) => {
-                if (e.target.classList.contains('is-invalid')) {
-                    e.target.classList.remove('is-invalid');
-                }
-            });
-            form.addEventListener('change', (e) => {
-                if (e.target.type === 'radio' && e.target.closest('.question-card')) {
-                    e.target.closest('.question-card').style.borderColor = '#e8ecf1';
-                }
-            });
-
-            // Auto-format WhatsApp number (hanya angka setelah +62)
-            const waInput = document.getElementById('noWhatsapp');
-            waInput.addEventListener('input', function (e) {
-                // hapus semua karakter non-digit
-                let val = this.value.replace(/\D/g, ''); 
-                
-                // mengabaikan user jika mengetik +62 atau 0
-                if (val.startsWith('62')) {
-                    val = val.substring(2);
-                } else if (val.startsWith('0')) {
-                    val = val.substring(1);
-                }
-
-                // Format: nomor wa
-                let formatted = '';
-                if (val.length > 0) {
-                    formatted += val.substring(0, 3);
-                }
-                if (val.length > 3) {
-                    formatted += '-' + val.substring(3, 7);
-                }
-                if (val.length > 7) {
-                    formatted += '-' + val.substring(7, 12);
-                }
-                
-                this.value = formatted;
-            });
-
-            const dateInput = document.getElementById('tanggalKonsultasi');
-            if (dateInput) {
-                const today = new Date().toISOString().split('T')[0];
-                dateInput.setAttribute('min', today);
-            }
-        })();
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
