@@ -19,14 +19,17 @@ Demo / Preview
 Struktur proyek
 ---------------
 - index.html
+- program.html
+- layanan.html
+- tentang.html
 - script.js
+- login.html
+- register.html
 - css/
   - styles.css
 - assets/
-  - images/
-  - fonts/
-
-(Tambah atau sesuaikan sesuai struktur repo Anda.)
+  - img/
+  - logo/
 
 Teknologi
 --------
@@ -45,7 +48,7 @@ Cara menjalankan (lokal)
 Lisensi
 -------
 
-Daftar anggota kelompok (template)
+Daftar anggota kelompok
 ----------------------------------
 1. [Farrel] — Peran: Project Manager & Leader Team
 2. [Fauzan] — Peran: UI/UX Desainer & Developer (Desain Konsep & Struktur)  
