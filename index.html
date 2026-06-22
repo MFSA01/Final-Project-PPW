@@ -1268,98 +1268,121 @@
                     </div>
                     
                     <div class="col-lg-3 col-md-4 d-flex justify-content-md-end mt-4 mt-md-0 gap-3">
-                        <button type="button" class="btn btn-outline-primary btn-nav rounded-circle d-flex align-items-center justify-content-center" aria-label="Sebelumnya">
+                        <button type="button" class="btn btn-outline-primary btn-nav rounded-circle d-flex align-items-center justify-content-center" aria-label="Sebelumnya" data-bs-target="#testimoniCarousel" data-bs-slide="prev">
                             <i class="bi bi-arrow-left"></i>
                         </button>
-                        <button type="button" class="btn btn-outline-primary btn-nav rounded-circle d-flex align-items-center justify-content-center" aria-label="Berikutnya">
+                        <button type="button" class="btn btn-outline-primary btn-nav rounded-circle d-flex align-items-center justify-content-center" aria-label="Berikutnya" data-bs-target="#testimoniCarousel" data-bs-slide="next">
                             <i class="bi bi-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Testimoni - Cards -->
-                <div class="row g-4">
-                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-                        <article class="card h-100 p-4 border-0 shadow-sm testimoni-card">
-                            <div class="d-flex gap-1 mb-3">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                            </div>
-                            
-                            <p class="mb-4 testimoni-text">
-                                "Program Communication for Team benar-benar mengubah dinamika tim kami. Setelah pelatihan, 
-                                rapat jadi lebih efektif dan konflik internal berkurang drastis."
-                            </p>
-                            
-                            <div class="d-flex align-items-center gap-3 mt-auto">
-                                <div class="avatar-box">
-                                    <img src="assets/landingPage/testimoni1.png" alt="Foto Rahmat Hidayat">
+                <!-- Testimoni - Carousel -->
+                <div id="testimoniCarousel" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="5000" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <article class="card p-4 p-md-5 border-0 shadow-sm testimoni-card text-center">
+                                        <div class="d-flex justify-content-center gap-1 mb-3">
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                        </div>
+                                        
+                                        <p class="mb-4 testimoni-text fs-5 fst-italic">
+                                            "Program Communication for Team benar-benar mengubah dinamika tim kami. Setelah pelatihan, 
+                                            rapat jadi lebih efektif dan konflik internal berkurang drastis."
+                                        </p>
+                                        
+                                        <div class="d-flex align-items-center justify-content-center gap-3 mt-3">
+                                            <div class="avatar-box rounded-circle overflow-hidden" style="width: 48px; height: 48px;">
+                                                <img src="assets/landingPage/testimoni1.png" alt="Foto Rahmat Hidayat" style="width: 100%; height: 100%; object-fit: cover;">
+                                            </div>
+                                            <div class="text-start">
+                                                <h6 class="mb-0 fw-bold user-name">Rahmat Hidayat</h6>
+                                                <small class="user-role text-muted">HR Manager</small>
+                                            </div>
+                                        </div>
+                                    </article>  
                                 </div>
-                                <div>
-                                    <h6 class="mb-0 fw-bold user-name">Rahmat Hidayat</h6>
-                                    <small class="user-role">HR Manager</small>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <article class="card p-4 p-md-5 border-0 shadow-sm testimoni-card text-center">
+                                        <div class="d-flex justify-content-center gap-1 mb-3">
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                        </div>
+                                        
+                                        <p class="mb-4 testimoni-text fs-5 fst-italic">
+                                            "Communication for Sales dari BISA Academy luar biasa! Tim sales kami naik konversinya 
+                                            signifikan dalam 2 bulan setelah ikut program ini. Sangat rekomendasikan."
+                                        </p>
+                                        
+                                        <div class="d-flex align-items-center justify-content-center gap-3 mt-3">
+                                            <div class="avatar-box rounded-circle overflow-hidden" style="width: 48px; height: 48px;">
+                                                <img src="assets/landingPage/testimoni2.png" alt="Foto Siti Aisyah" style="width: 100%; height: 100%; object-fit: cover;">
+                                            </div>
+                                            <div class="text-start">
+                                                <h6 class="mb-0 fw-bold user-name">Siti Aisyah</h6>
+                                                <small class="user-role text-muted">Sales Director</small>
+                                            </div>
+                                        </div>
+                                    </article>
                                 </div>
                             </div>
-                        </article>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 col-md-10">
+                                    <article class="card p-4 p-md-5 border-0 shadow-sm testimoni-card text-center">
+                                        <div class="d-flex justify-content-center gap-1 mb-3">
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                            <i class="bi bi-star-fill text-warning fs-5"></i>
+                                        </div>
+                                        
+                                        <p class="mb-4 testimoni-text fs-5 fst-italic">
+                                            "Harmonic System membantu kami membangun SOP yang jelas dan sistem kerja yang efisien. 
+                                            Bisnis kami kini bisa berjalan lebih mandiri tanpa saya harus terlibat di semua hal."
+                                        </p>
+                                        
+                                        <div class="d-flex align-items-center justify-content-center gap-3 mt-3">
+                                            <div class="avatar-box rounded-circle overflow-hidden" style="width: 48px; height: 48px;">
+                                                <img src="assets/landingPage/testimoni3.png" alt="Foto Budi Wibowo" style="width: 100%; height: 100%; object-fit: cover;">
+                                            </div>
+                                            <div class="text-start">
+                                                <h6 class="mb-0 fw-bold user-name">Budi Wibowo</h6>
+                                                <small class="user-role text-muted">CEO</small>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-                        <article class="card h-100 p-4 border-0 shadow-sm testimoni-card">
-                            <div class="d-flex gap-1 mb-3">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                            </div>
-
-                            <p class="mb-4 testimoni-text">
-                                "Communication for Sales dari BISA Academy luar biasa! Tim sales kami naik konversinya 
-                                signifikan dalam 2 bulan setelah ikut program ini. Sangat rekomendasikan."
-                            </p>
-                            
-                            <div class="d-flex align-items-center gap-3 mt-auto">
-                                <div class="avatar-box">
-                                    <img src="assets/landingPage/testimoni2.png" alt="Foto Siti Aisyah">
-                                </div>
-                                <div>
-                                    <h6 class="mb-0 fw-bold user-name">Siti Aisyah</h6>
-                                    <small class="user-role">Sales Director</small>
-                                </div>
-                            </div>
-                        </article>
+                    <!-- Carousel Indicators -->
+                    <div class="carousel-indicators" style="position: relative; margin-top: 24px; bottom: 0;">
+                        <button type="button" data-bs-target="#testimoniCarousel" data-bs-slide-to="0" class="active bg-primary" aria-current="true" aria-label="Slide 1" style="width: 10px; height: 10px; border-radius: 50%; border: none;"></button>
+                        <button type="button" data-bs-target="#testimoniCarousel" data-bs-slide-to="1" class="bg-primary" aria-label="Slide 2" style="width: 10px; height: 10px; border-radius: 50%; border: none;"></button>
+                        <button type="button" data-bs-target="#testimoniCarousel" data-bs-slide-to="2" class="bg-primary" aria-label="Slide 3" style="width: 10px; height: 10px; border-radius: 50%; border: none;"></button>
                     </div>
-
-                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-                        <article class="card h-100 p-4 border-0 shadow-sm testimoni-card">
-                            <div class="d-flex gap-1 mb-3">
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                                <i class="bi bi-star-fill text-warning"></i>
-                            </div>
-
-                            <p class="mb-4 testimoni-text">
-                                "Harmonic System membantu kami membangun SOP yang jelas dan sistem kerja yang efisien. 
-                                Bisnis kami kini bisa berjalan lebih mandiri tanpa saya harus terlibat di semua hal."
-                            </p>
-                            
-                            <div class="d-flex align-items-center gap-3 mt-auto">
-                                <div class="avatar-box">
-                                    <img src="assets/landingPage/testimoni3.png" alt="Foto Budi Wibowo">
-                                </div>
-                                <div>
-                                    <h6 class="mb-0 fw-bold user-name">Budi Wibowo</h6>
-                                    <small class="user-role">CEO</small>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
 
             </div>
         </section>
