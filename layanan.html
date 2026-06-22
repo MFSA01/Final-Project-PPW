@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BISA Academy">
+    <title>BISA Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #eef4fc;
+            color: #1b1b1b;
+            overflow-x: hidden;
+        }
+
+        .overlay-border {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background-color: rgba(255, 223, 152, 0.2);
+            border-radius: 9999px;
+            border: 1px solid rgba(119, 90, 0, 0.2);
+            color: #775a00;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .badge-yellow {
+            background-color: #fcf6c2;
+            color: #7c794e;
+            font-weight: 700;
+            font-size: 12px;
+            border-radius: 16px;
+            padding: 6px 12px;
+            display: inline-block;
+        }
+
+        .text-blue {
+            color: #296ca9 !important;
+        }
+
+        .hero-image-frame {
+            background-color: #296ca9;
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+        }
+
+        .services-section {
+            background: linear-gradient(135deg, #8fcbe6 0%, #296ca9 100%);
+            color: #ffffff;
+        }
+
+        .service-card {
+            border-radius: 24px;
+            border: none;
+            background-color: #ffffff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .service-card .card-title {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-weight: 700;
+            color: #1b1b1b;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .service-card .card-text {
+            color: #414750;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .icon-box {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .icon-box.bg-blue-soft {
+            background-color: #eef4fc;
+            color: #296ca9;
+        }
+
+        .icon-box.bg-orange-soft {
+            background-color: #fff3e1;
+            color: #b7791f;
+        }
+
+        .icon-box.bg-gold-soft {
+            background-color: #fff6db;
+            color: #7c794e;
+        }
+
+        .icon-box.bg-gray-soft {
+            background-color: #eef1f6;
+            color: #4b5563;
+        }
+
+        .methodology-card {
+            border: none;
+            border-radius: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            height: 100%;
+        }
+
+        .methodology-card .card-title {
+            font-weight: 700;
+            color: #1b1b1b;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .methodology-card .card-text {
+            font-size: 14px;
+            color: #414750;
+            line-height: 1.6;
+        }
+
+        .hubungi-kami-banner {
+            background: linear-gradient(180deg, rgba(143, 203, 230, 0.15) 0%, rgba(41, 108, 169, 0.9) 100%);
+            border-radius: 40px;
+            overflow: hidden;
+            padding: 60px 40px 0 40px;
+            text-align: center;
+        }
+
+        .hubungi-kami-banner h2 {
+            font-size: 36px;
+            font-weight: 700;
+            max-width: 750px;
+            margin: 0 auto 20px auto;
+            color: #121212;
+            line-height: 1.3;
+        }
+
+        .hubungi-kami-banner p {
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: #414750;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hubungi-kami-banner .btn-dark {
+            background-color: #121212;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: none;
+        }
+
+        .hubungi-kami-banner .btn-light {
+            background-color: #ffffff;
+            color: #121212;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: none;
+        }
+
+        .hubungi-kami-banner .cta-image-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .hubungi-kami-banner .cta-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .cta-section {
+            max-width: 1120px;
+            margin: 80px auto;
+            padding: 60px 40px 0 40px;
+            background: linear-gradient(180deg, rgba(143, 203, 230, 0.15) 0%, rgba(41, 108, 169, 0.9) 100%);
+            border-radius: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: #ffffff;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 750px;
+            margin: 0 auto 20px auto;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn-dark,
+        .btn-light {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-dark {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .btn-dark:hover {
+            background-color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-light {
+            background-color: #ffffff;
+            color: #121212;
+        }
+
+        .btn-light:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-dark i,
+        .btn-light i {
+            font-size: 18px;
+        }
+
+        .cta-image-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cta-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 991.98px) {
+            .cta-section {
+                padding: 50px 30px 0 30px;
+                margin: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 34px;
+            }
+
+            .cta-image-wrapper {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .cta-section {
+                padding: 40px 24px 0 24px;
+                margin: 50px 15px;
+                border-radius: 30px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .cta-section p {
+                font-size: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 320px;
+                gap: 12px;
+                margin: 0 auto 30px auto;
+            }
+
+            .cta-image-wrapper {
+                max-width: 420px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .cta-section {
+                padding: 35px 20px 0 20px;
+                border-radius: 25px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            .cta-section p {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .cta-buttons {
+                max-width: 280px;
+                margin-bottom: 25px;
+            }
+
+            .cta-image-wrapper {
+                max-width: 340px;
+            }
+        }
+    .btn-layanan {
+        background-color: #296CA9;
+        color: white;
+    }
+
+    .btn-layanan:hover {
+        background-color: #3381ca;
+        color: white;
+    }
+    .btn-konsul {
+        background-color: transparent;
+        color: black;
+        border-color: #000000;
+    }
+
+    .btn-konsul:hover {
+        background-color: rgba(175, 175, 175, 0.363);
+        color: black;
+        border-color: #000000;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-bisa" id="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand d-flex align-items-center gap-2" id="navbar-logo">
+                <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                <div class="logo-text">
+                    <span class="brand-name">BISA<span class="titik">.</span></span>
+                    <span class="brand-sub">Academy</span>
+                </div>
+            </a>
+
+            <!-- navbar mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" id="nav-program">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="program.html" id="nav-program">Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="layanan.html" id="nav-layanan">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tentang.html" id="nav-tentang">Tentang</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" id="nav-testimoni">Testimoni</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 navbar-actions">
+                    <a href="#login" class="btn btn-outline-secondary btn-masuk" id="btn-signup">Masuk</a>
+                    <a href="#hubungi-kami-title" class="btn btn-primary btn-hubungi" id="btn-hubungi">Hubungi Kami</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="py-5 mt-5" id="layanan" aria-labelledby="hero-title">
+            <div class="container py-lg-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="overlay-border mb-4">
+                            <i class="bi bi-patch-check-fill"
+                                style="font-size: 12px; color: #775a00; display: inline-flex; line-height: 1;"></i>
+                            <span class="ms-1">Solusi B2B Terpercaya</span>
+                        </div>
+                        <h1 class="fw-bold display-4 mb-4" id="hero-title" style="line-height: 1.2;">
+                            Layanan<br />Unggulan <span class="text-blue">BISA</span><br />
+                            <span class="text-blue">Academy</span>
+                        </h1>
+                        <p class="text-muted fs-5 mb-4" style="line-height: 1.6; max-width: 520px;">
+                            Kami membantu perusahaan memperkuat komunikasi, meningkatkan produktivitas tim, dan
+                            membangun sistem operasional yang lebih terstruktur melalui program pelatihan dan konsultasi
+                            praktis yang disesuaikan dengan kebutuhan industri Anda.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#layanan-kami-title" class="btn btn-layanan px-4 py-3 rounded-4"
+                                aria-label="Lihat semua layanan">
+                                Lihat Semua Layanan
+                            </a>
+                            <a href="formulir-pendaftaran.html" class="btn btn-konsul px-4 py-3 rounded-4"
+                                aria-label="Konsultasi gratis">
+                                Konsultasi Gratis
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="hero-image-frame">
+                            <img src="assets/img/hero_layanan_blue.png" alt="Layanan BISA Academy" class="img-fluid" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service -->
+        <section class="services-section py-5" aria-labelledby="layanan-kami-title">
+            <div class="container py-5">
+                <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="badge-yellow mb-3">Layanan Kami</div>
+                    <h2 class="fw-bold display-5 text-white mb-3" id="layanan-kami-title">Lebih dari Sekadar Pelatihan
+                    </h2>
+                    <p class="text-white-50 mx-auto" style="max-width: 600px;">
+                        Selain 4 program unggulan, kami juga menyediakan layanan pendukung untuk kebutuhan pengembangan
+                        organisasi Anda.
+                    </p>
+                </div>
+
+                <div class="row row-cols-1 row-cols-lg-2 g-4">
+                    <!-- Card 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <article class="service-card p-4 d-flex flex-column" aria-labelledby="layanan-inhouse-title">
+                            <div class="icon-box bg-blue-soft">
+                                <i class="bi bi-building-fill fs-4"></i>
+                            </div>
+                            <h3 class="card-title" id="layanan-inhouse-title">In-House Training</h3>
+                            <p class="card-text mb-0">
+                                Program pelatihan langsung di lokasi perusahaan Anda dengan konten yang disesuaikan
+                                penuh dengan kebutuhan dan budaya organisasi.
+                            </p>
+                        </article>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <article class="service-card p-4 d-flex flex-column" aria-labelledby="layanan-consulting-title">
+                            <div class="icon-box bg-gold-soft">
+                                <i class="bi bi-briefcase-fill fs-4"></i>
+                            </div>
+                            <h3 class="card-title" id="layanan-consulting-title">Consulting &amp; Advisory</h3>
+                            <p class="card-text mb-0">
+                                Pendampingan konsultasi strategis untuk merancang sistem komunikasi dan operasional
+                                bisnis yang lebih efektif dan terstruktur.
+                            </p>
+                        </article>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <article class="service-card p-4 d-flex flex-column" aria-labelledby="layanan-asesmen-title">
+                            <div class="icon-box bg-orange-soft">
+                                <i class="bi bi-clipboard-check-fill fs-4"></i>
+                            </div>
+                            <h3 class="card-title" id="layanan-asesmen-title">Asesmen &amp; Evaluasi</h3>
+                            <p class="card-text mb-0">
+                                Layanan asesmen kompetensi dan evaluasi program untuk mengukur efektivitas pelatihan dan
+                                ROI investasi pengembangan SDM Anda.
+                            </p>
+                        </article>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                        <article class="service-card p-4 d-flex flex-column" aria-labelledby="layanan-webinar-title">
+                            <div class="icon-box bg-gray-soft">
+                                <i class="bi bi-mortarboard-fill fs-4"></i>
+                            </div>
+                            <h3 class="card-title" id="layanan-webinar-title">Webinar &amp; Workshop</h3>
+                            <p class="card-text mb-0">
+                                Sesi pembelajaran online dan offline format singkat yang padat dan langsung aplikatif
+                                topik-topik spesifik yang dibutuhkan tim Anda.
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section class="py-5" aria-labelledby="metodologi-title">
+            <div class="container py-5">
+                <!-- Section Header -->
+                <div class="text-center mb-5" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="badge-yellow mb-3">Metodologi</div>
+                    <h2 class="fw-bold display-5 mb-3" id="metodologi-title">Bagaimana kami membantu Produktivitas Anda?
+                    </h2>
+                    <p class="text-muted mx-auto" style="max-width: 600px;">
+                        Setiap program BISA Academy dirancang dengan metodologi yang memastikan hasil nyata dan
+                        perubahan berkelanjutan.
+                    </p>
+                </div>
+
+                <!-- Cards Grid -->
+                <div class="row row-cols-1 row-cols-lg-3 g-4">
+                    <!-- Card 1 -->
+                    <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <article class="methodology-card p-4 d-flex flex-column">
+                            <h3 class="card-title d-flex align-items-center">
+                                <i class="bi bi-person-workspace text-blue me-2"></i>
+                                Aktif &amp; Experiential
+                            </h3>
+                            <hr class="my-3 text-muted opacity-25">
+                            <p class="card-text text-muted mb-0">
+                                • Learning by doing — bukan sekadar mendengarkan<br />
+                                • Simulasi kasus nyata dari industri Anda<br />
+                                • Role-play dan praktik langsung di setiap sesi<br />
+                                • Peserta langsung bisa aplikasikan ilmu hari itu
+                            </p>
+                        </article>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <article class="methodology-card p-4 d-flex flex-column">
+                            <h3 class="card-title d-flex align-items-center">
+                                <i class="bi bi-sliders text-blue me-2"></i>
+                                Customized &amp; Relevan
+                            </h3>
+                            <hr class="my-3 text-muted opacity-25">
+                            <p class="card-text text-muted mb-0">
+                                • Modul disesuaikan dengan industri dan kebutuhan klien<br />
+                                • Asesmen kebutuhan sebelum program dimulai<br />
+                                • Studi kasus dari konteks bisnis Anda sendiri<br />
+                                • Fleksibel: online, offline, atau hybrid
+                            </p>
+                        </article>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <article class="methodology-card p-4 d-flex flex-column">
+                            <h3 class="card-title d-flex align-items-center">
+                                <i class="bi bi-graph-up-arrow text-blue me-2"></i>
+                                Dampak Berkelanjutan
+                            </h3>
+                            <hr class="my-3 text-muted opacity-25">
+                            <p class="card-text text-muted mb-0">
+                                • Follow-up dan coaching setelah program selesai<br />
+                                • Pengukuran perubahan perilaku secara terstruktur<br />
+                                • Laporan dampak yang transparan untuk manajemen<br />
+                                • Dukungan implementasi di lapangan
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container py-5 my-5" aria-labelledby="hubungi-kami-title">
+            <div class="hubungi-kami-banner mx-auto" data-aos="zoom-in" data-aos-duration="1000">
+                <h2 id="hubungi-kami-title">
+                    Siap Memulai Perjalanan Transformasi Bersama BISA Academy?
+                </h2>
+                <p>
+                    Konsultasikan kebutuhan pelatihan dan pengembangan tim Anda. Gratis, tanpa komitmen.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn-dark" aria-label="Hubungi Kami melalui WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>Hubungi Kami</span>
+                </a>
+                    <a href="formulir-pendaftaran.html" class="btn-light" aria-label="Konsultasi Gratis">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>Konsultasi Gratis</span>
+                    </a>
+                </div>
+                <div class="cta-image-wrapper">
+                    <img class="image img-fluid" src="assets/img/people.webp" alt="Tim BISA Academy"
+                        style="max-width: 500px;" loading="lazy" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-bisa">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5">
+                    <a href="index.html" class="d-flex align-items-center gap-2 mb-3 text-decoration-none">
+                        <img src="assets/icon/icon-Bisa-Academy.png" alt="BISA Academy Logo" class="logo-image">
+                        <div class="logo-text">
+                            <span class="brand-name">BISA<span class="titik">.</span></span>
+                            <span class="brand-sub">Academy</span>
+                        </div>
+                    </a>
+                    <p class="footer-desc mb-4">
+                        Lembaga pelatihan & konsultasi bisnis yang membantu early founders dan UMKM Indonesia tumbuh
+                        dari nol hingga autopilot.
+                    </p>
+
+                    <h5 class="subscribe-title mb-2">Subscribe Email</h5>
+                    <p class="subscribe-desc mb-3">Temukan insight bisnis dan transformasi digital melalui update nawala
+                        dan artikel terbaru kami</p>
+
+                    <form class="subscribe-form d-flex">
+                        <div class="input-group">
+                            <span class="input-group-text bg-light border-end-0 rounded-start-pill"><i
+                                    class="bi bi-envelope"></i></span>
+                            <input type="email" class="form-control bg-light border-start-0 rounded-end-pill px-0"
+                                placeholder="Masukkan email anda" required>
+                        </div>
+                        <button class="btn btn-primary btn-subscribe rounded-pill ms-2 px-4"
+                            type="submit">Subscribe</button>
+                    </form>
+                </div>
+
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-3 col-md-6 mt-5 mt-lg-4">
+                    <h5 class="footer-title">PROGRAM</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">Communication for Team</a></li>
+                        <li><a href="#">Communication for Sales</a></li>
+                        <li><a href="#">Harmonic System</a></li>
+                        <li><a href="#">Program CSR Pendidikan</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-4">
+                    <h5 class="footer-title">KONTAK</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li>Jl. Danau Maninjau No. 39, Surabaya, Kec. Kedaton, Kota Bandar Lampung, Lampung 35122</li>
+                        <li>(+62)822 7979 3385</li>
+                        <li>hbisaacademyindonesia@gmail.com</li>
+                    </ul>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="footer-bottom mt-5 pt-4 border-top d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <p class="mb-2 mb-md-0">Copyright &copy; 2026 BISA Academy Indonesia. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Terms & Conditions</a> <span class="mx-2">•</span> <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

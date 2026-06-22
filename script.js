@@ -99,7 +99,7 @@
             `).join('');
 
             return `
-                <div class="col">
+                <div class="col" data-aos="fade-up" data-aos-duration="800">
                     <div class="program-card">
                         <div class="card-img-wrapper">
                             <span class="card-badge">${prog.id}</span>
@@ -117,6 +117,10 @@
                 </div>
             `;
         }).join('');
+
+        if (window.AOS) {
+            window.AOS.refresh();
+        }
     }
 
     filterBtns.forEach(btn => {

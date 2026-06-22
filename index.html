@@ -10,7 +10,905 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            background: #eef4fc;
+            color: #1e293b;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navbar */
+        .navbar-bisa {
+            background: #ffffff;
+            border-bottom: 1px solid #e8ecf1;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+            padding-top: 0;
+            padding-bottom: 0;
+            min-height: 72px;
+        }
+
+        .navbar-bisa .navbar-brand {
+            gap: 12px;
+            padding: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .navbar-bisa .navbar-brand:hover {
+            opacity: 0.85;
+        }
+
+        .logo-image {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
+
+        .logo-text .brand-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: #296ca9;
+            letter-spacing: -0.3px;
+        }
+
+        .titik{
+            font-size: 20px;
+            font-weight: 700;
+            color: #E85D26;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-text .brand-sub {
+            font-size: 13px;
+            font-weight: 500;
+            color: #64748b;
+            letter-spacing: 0.5px;
+        }
+
+        .navbar-bisa .navbar-nav {
+            gap: 24px;
+        }
+
+        .navbar-bisa .nav-link {
+            font-size: 14.5px;
+            font-weight: 500;
+            color: #475569;
+            padding: 8px 16px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-bisa .nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2.5px;
+            background-color: #296ca9;
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .navbar-bisa .nav-link:hover,
+        .navbar-bisa .nav-link:focus {
+            color: #296ca9;
+        }
+
+        .navbar-bisa .nav-link:hover::after,
+        .navbar-bisa .nav-link:focus::after {
+            width: calc(100% - 32px);
+        }
+
+        .navbar-bisa .nav-link.active {
+            color: #296ca9;
+            font-weight: 600;
+        }
+
+        .navbar-bisa .nav-link.active::after {
+            width: calc(100% - 32px);
+        }
+
+        .btn-masuk {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 10px;
+            border: 2px solid #cbd5e1 !important;
+            color: #1e293b !important;
+            background: transparent !important;
+            transition: all 0.25s ease;
+            }
+
+        .btn-masuk:hover {
+            border-color: #2563eb !important;
+            color: #2563eb !important;
+            background: #eff6ff !important;
+        }
+
+        .btn-hubungi {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 22px;
+            border-radius: 10px;
+            background: #296ca9 !important;
+            border-color: #296ca9 !important;
+            color: #ffffff !important;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+            transition: all 0.25s ease;
+        }
+
+        .btn-hubungi:hover {
+            background: #1e5a8f !important;
+            border-color: #1e5a8f !important;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+            transform: translateY(-1px);
+        }
+        .navbar-bisa .navbar-toggler {
+            border: 1px solid #cbd5e1;
+            padding: 6px 10px;
+        }
+
+        .navbar-bisa .navbar-toggler:focus {
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-bisa {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .navbar-bisa .navbar-nav {
+                padding-top: 15px;
+                padding-bottom: 0;
+                margin-top: 15px;
+                border-top: 1px solid #e8ecf1;
+            }
+
+            .navbar-bisa .nav-item {
+                border-bottom: 1px solid #e8ecf1;
+            }
+
+            .navbar-bisa .nav-link {
+                padding: 14px 16px;
+                font-size: 15px;
+                font-weight: 500;
+                color: #475569;
+                transition: all 0.2s ease;
+            }
+
+            .navbar-bisa .nav-link::after {
+                display: none;
+            }
+
+            .navbar-bisa .nav-link:hover {
+                color: #296ca9;
+                background-color: #f8fafc;
+                padding-left: 22px;
+            }
+
+            .navbar-actions {
+                flex-direction: column;
+                padding: 24px 0 10px;
+                gap: 12px !important;
+            }
+
+            .navbar-actions .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 10px 0;
+            }
+        }
+
+        /* SECTION - HERO */
+        :root {
+            --brand-primary: #296ca9;
+            --brand-orange: #e85d26;
+            --brand-highlight: #8fcbe6;
+            --bg-color: #eef4fc;
+        }
+
+        .hero-section {
+            background: radial-gradient(circle at 85% 30%, #8fcbe640 0%, transparent 40%),
+                        radial-gradient(circle at 30% 70%, #fcf6c24d 0%, transparent 40%),
+                        var(--bg-color);
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding-top: 80px;
+        }
+
+        /* Mentors */
+        .avatar-group img {
+            width: 28px;
+            height: 28px;
+            object-fit: cover;
+            border: 2px solid #ffffff;
+            margin-left: -10px;
+            position: relative;
+        }
+        .avatar-group img:first-child {
+            margin-left: 0;
+            z-index: 3;
+        }
+        .avatar-group img:nth-child(2) { z-index: 2; }
+        .avatar-group img:last-child { z-index: 1; }
+
+        .hero-title {
+            letter-spacing: -1px;
+            line-height: 1.2;
+            color: #121212;
+        }
+
+        .text-primary-brand { 
+            color: var(--brand-primary); 
+        }
+        .text-orange-brand { 
+            color: var(--brand-orange); 
+        }
+
+        /* Highlight "Nol Ide" */
+        .highlight-pill {
+            background-color: var(--brand-highlight);
+            padding: 0 16px;
+            border-radius: 24px;
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .btn-lihat-program {
+            background-color: var(--brand-primary);
+            color: #ffffff;
+            border: 1px solid var(--brand-primary);
+            border-radius: 8px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .btn-lihat-program:hover {
+            background-color: white;
+            color: #121212;
+            border: 1px solid var(--brand-primary);
+        }
+
+        .btn-hubungi-kami {
+            background-color: white;
+            color: #121212;
+            border: 1px solid var(--brand-primary);
+            border-radius: 8px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        .btn-hubungi-kami:hover {
+            background-color: #296ca9;
+            color: white;
+        }
+
+        /* Mockup Dashboard LMS */
+        .hero-image-wrapper {
+            max-width: 900px;
+        }
+
+        /* SECTION - STATISTIK */
+        .stat-section {
+            background-color: var(--brand-primary);
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding-top: 32px;
+            padding-bottom: 32px;
+        }
+
+        .stat-number {
+            color: #FCF6C2;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-text {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: 0.3px;
+            color: #ffffff;
+            white-space: nowrap;
+        }
+
+        @media (min-width: 768px) {
+            .border-start-md {
+                border-left: 2px solid var(--brand-highlight) !important;
+            }
+        }
+
+        /* SECTION - TENTANG KAMI */
+        .tentang-kami {
+            padding-top: 100px;
+        }
+
+        .badge-section {
+            border-radius: 50px; 
+            padding: 8px 16px; 
+            font-size: 12px;
+            background-color: #fcf6c2;
+            color: #7c794e;
+        }
+
+        .section-title {
+            color: #121212;
+            font-size: 36px;
+            line-height: 1.3;
+        }
+        .section-subtitle {
+            font-size: 16px;
+            line-height: 1.6;
+            letter-spacing: 0.3px;
+        }
+
+        .img-tentang-kami {
+            width: 100%;
+            background-color: #d9d9d9;
+            aspect-ratio: 1 / 1;
+            border-radius: 24px;
+        }
+
+        .feature-card {
+            gap: 16px;
+            padding: 24px;
+            background-color: #ffffff;
+            border: 1px solid var(--brand-primary);
+            border-radius: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px #296ca91a;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            color: #296ca9;
+            background-color: #bbd9f5;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            color: #121212;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .feature-desc {
+            color: #4a4a4a;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 991px) {
+            .section-title {
+                font-size: 30px;
+            }
+            
+            .image-placeholder {
+                border-radius: 40px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+        /* SECTION - HIRING PARTNERS */
+        .hiring-partners {
+            padding-top: 100px;
+        }
+
+        .hiring-partners h5 {
+            color: #A2A2A2;
+            margin-bottom: 40px; 
+        }
+
+        .hiring-partners img {
+            height: 40px;
+            width: auto;
+            object-fit: contain;
+        }
+        .hiring-partners img:hover {
+            transform: scale(1.1);
+        }
+
+        /* SECTION - METODOLOGI */
+        .metodologi {
+            padding-top: 100px;
+        }
+
+        .card-metodologi {
+            border: none;
+            border-radius: 16px;
+            height: 100%;
+            padding: 32px;
+        }
+        .card-metodologi:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 2px 68px 20px rgba(64, 159, 247, 0.08);
+        }
+
+        .icon-metod-card1 {
+            width: 56px;
+            height: 56px;
+            color: #dbcf22;
+            background-color: #fffcd4;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-tebal-card2 {
+            -webkit-text-stroke: 1px #868686; 
+        }
+        .icon-metod-card2 {
+            width: 56px;
+            height: 56px;
+            background-color: #e6e6e6;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon-tebal-card3 {
+            -webkit-text-stroke: 1px #37ce37; 
+        }
+        .icon-metod-card3 {
+            width: 56px;
+            height: 56px;
+            background-color: #beffbe;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-metodologi li {
+            line-height: 28px;
+        }
+
+        /* SECTION PROGRAM PELATIHAN */
+        .program-pelatihan {
+            padding-top: 100px;
+        }
+
+        .header-title {
+            color: #121212;
+            font-size: 40px;
+        }
+
+        .header-subtitle {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .program-card {
+            border-radius: 20px;
+            padding: 24px;
+            height: 100%;
+        }
+
+        .program-card-img { /* Placeholder Gambar Abu-abu */
+            background-color: #d9d9d9;
+            border-radius: 16px;
+            height: 39%;
+            width: 100%;
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background-color: #727272;
+            color: #ffffff;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .program-card-title {
+            font-weight: 700;
+            color: #121212;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .program-card-text {
+            font-weight: 400;
+            color: #121212;
+            font-size: 14px;
+            line-height: 1.8; 
+            margin-bottom: 16px;
+        }
+
+        .program-card-list {
+            font-weight: 400;
+            color: #121212;
+            font-size: 14px;
+            line-height: 1.8;
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .program-card-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Lihat Semua Program */
+        .btn-lihat-semua {
+            background-color: #ffffff;
+            border: 1px solid var(--brand-primary);
+            border-radius: 20px;
+            padding: 24px 32px;
+            color: var(--brand-primary);
+            font-size: 18px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lihat-semua:hover {
+            background-color: var(--brand-primary);
+            color: white;
+        }
+
+        /* SECTION - TESTIMONI */
+        .testimoni-section {
+            padding-top: 100px;
+        }
+
+        .section-title {
+            color: #121212;
+            font-size: 40px;
+            line-height: 1.25;
+        }
+
+        .testimoni-card {
+            border-radius: 12px;
+            background-color: #ffffff;
+        }
+
+        .testimoni-text {
+            font-size: 14px;
+            color: #121212;
+            line-height: 1.7;
+        }
+
+        .avatar-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            flex-shrink: 0;
+        }
+
+        .user-name {
+            color: #121212;
+            font-size: 16px;
+        }
+
+        .user-role {
+            color: #121212;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .btn-nav {
+            width: 48px;
+            height: 48px;
+            border-color: #296ca9;
+            background-color: white;
+            color: #296ca9;
+        }
+        .btn-nav:hover {
+            background-color: #296ca9;
+        }
+
+        .btn-nav i {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        /* SECTION - HUBUNGI KAMI */
+        .cta-section {
+            max-width: 1120px;
+            margin: 80px auto;
+            padding: 60px 40px 0 40px;
+            background: linear-gradient(180deg, #8fcbe626 0%, #296ca9e6 100%);
+            border-radius: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: #ffffff;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 750px;
+            margin: 0 auto 20px auto;
+        }
+
+        .cta-section p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 28px;
+            flex-wrap: wrap;
+        }
+
+        .btn-dark,
+        .btn-light {
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 16px;
+        }
+
+        .btn-dark {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .btn-dark:hover {
+            background-color: #000000;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px #0000004d;
+        }
+
+        .btn-light {
+            background-color: #ffffff;
+            color: #121212;
+        }
+
+        .btn-light:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px #00000033;
+        }
+
+        .btn-dark i,
+        .btn-light i {
+            font-size: 18px;
+        }
+
+        .cta-image-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cta-image-wrapper img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 991.98px) {
+            .cta-section {
+                padding: 50px 30px 0 30px;
+                margin: 60px 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 34px;
+            }
+
+            .cta-image-wrapper {
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .cta-section {
+                padding: 40px 24px 0 24px;
+                margin: 50px 15px;
+                border-radius: 30px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .cta-section p {
+                font-size: 15px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 320px;
+                gap: 12px;
+                margin: 0 auto 30px auto;
+            }
+
+            .cta-image-wrapper {
+                max-width: 420px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .cta-section {
+                padding: 35px 20px 0 20px;
+                border-radius: 25px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+                margin-bottom: 16px;
+            }
+
+            .cta-section p {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .cta-buttons {
+                max-width: 280px;
+                margin-bottom: 25px;
+            }
+
+            .cta-image-wrapper {
+                max-width: 340px;
+            }
+        }
+
+        /* FOOTER */
+        .footer-bisa {
+            background: #ffffff;
+            padding: 60px 0 30px;
+            border-top: 1px solid #e8ecf1;
+            color: #475569;
+        }
+
+        .footer-desc {
+            font-size: 14.5px;
+            line-height: 1.6;
+        }
+
+        .subscribe-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .subscribe-desc {
+            font-size: 13.5px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .subscribe-form .input-group-text {
+            color: #94a3b8;
+            padding-left: 20px;
+            }
+
+        .subscribe-form .form-control {
+            font-size: 14px;
+        }
+
+        .subscribe-form .form-control:focus {
+            box-shadow: none;
+            border-color: #dee2e6;
+        }
+
+        .btn-subscribe {
+            background: #296ca9;
+            border-color: #296ca9;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .btn-subscribe:hover {
+            background: #1e5a8f;
+            border-color: #1e5a8f;
+        }
+
+        .footer-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #296ca9;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            font-size: 14.5px;
+            color: #475569;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #296ca9;
+        }
+
+        .footer-contact li {
+            font-size: 14.5px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #1e293b;
+            color: #ffffff;
+            border-radius: 6px;
+            margin-right: 8px;
+            font-size: 16px;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background: #296ca9;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            font-size: 13.5px;
+            color: #64748b;
+        }
+
+        .footer-legal a {
+            color: #64748b;
+            transition: color 0.2s ease;
+        }
+
+        .footer-legal a:hover {
+            color: #296ca9;
+        }
+    </style>
 </head>
 
 <body>
@@ -41,7 +939,7 @@
             <a class="nav-link" href="program.html" id="nav-program">Program</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#layanan" id="nav-layanan">Layanan</a>
+            <a class="nav-link" href="layanan.html" id="nav-layanan">Layanan</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="tentang.html" id="nav-tentang">Tentang</a>
@@ -63,15 +961,432 @@
     <!-- div untuk memberikan jarak (alternatifnya pakai padding-top: 72px;)  -->
     <div style="height: 72px;"></div>
     
-    <!-- konten halaman mulai dari sini -->
-    <section><h1><center>Ini halaman index</center></h1></section>
-    <section><h1><center>Ini halaman index</center></h1></section>
-    <section><h1><center>Ini halaman index</center></h1></section>
-    <section><h1><center>Ini halaman index</center></h1></section>
-    <section><h1><center>Ini halaman index</center></h1></section>
-    <section><h1><center>Ini halaman index</center></h1></section>
-    <section><h1><center>Ini halaman index</center></h1></section>
-    <section><h1><center>Ini halaman index</center></h1></section>
+    <main>
+        <!-- Section Hero -->
+        <section class="hero-section text-center">
+            <div class="container">
+                
+                <div class="d-inline-flex align-items-center gap-2 px-3 py-1 bg-white rounded-pill mb-4 border" data-aos="fade-down" data-aos-duration="800">
+                    <div class="avatar-group d-flex">
+                        <img src="assets/landingPage/mentor1.png" alt="Mentor 1" class="rounded-circle">
+                        <img src="assets/landingPage/mentor2.png" alt="Mentor 2" class="rounded-circle">
+                        <img src="assets/landingPage/mentor3.png" alt="Mentor 3" class="rounded-circle">
+                    </div>
+                    <span class="fw-medium text-dark" style="font-size: 0.9rem;">10+ Mentor berpengalaman</span>
+                </div>
+
+                <h1 class="display-4 fw-bold mb-3 hero-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                    Dari <span class="highlight-pill text-white fst-italic">Nol Ide</span> Sampai<br>
+                    Bisnis <span class="text-primary-brand">Berjalan Sendiri</span><span class="text-orange-brand">.</span>
+                </h1>
+
+                <p class="text-muted mx-auto mb-5 hero-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    BISA Academy menggunakan tiga tahapan terstruktur untuk membangun bisnis dari nol hingga autopilot.
+                </p>
+
+                <div class="d-flex justify-content-center gap-3 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <a class="btn btn-lihat-program fw-semibold px-4" href="#program">Lihat Program</a>
+                    <a class="btn btn-hubungi-kami fw-semibold px-4" href="#hubungi-kami">Hubungi Kami</a>
+                </div>
+
+                <div class="hero-image-wrapper mx-auto mt-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
+                    <img src="assets/landingPage/dashboardHero.png" alt="Dashboard LMS Platform BISA Academy" class="img-fluid">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section Statistik -->
+        <section class="stat-section text-white" aria-label="Statistik BISA Academy" data-aos="fade-up" data-aos-duration="800">
+            <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-lg-5">
+                
+                <div class="d-flex align-items-center gap-3 stat-item">
+                    <div class="stat-number">+500</div>
+                    <p class="stat-text mb-0">Peserta Pelatihan<br>Telah Dicetak</p>
+                </div>
+                
+                <div class="d-flex align-items-center gap-3 stat-item border-start-md ps-md-3 ps-lg-5">
+                    <div class="stat-number">10</div>
+                    <p class="stat-text mb-0">Program Unggulan<br>Teruji & Terstruktur</p>
+                </div>
+                
+                <div class="d-flex align-items-center gap-3 stat-item border-start-md ps-md-3 ps-lg-5">
+                    <div class="stat-number">98%</div>
+                    <p class="stat-text mb-0">Tingkat Kepuasan<br>Peserta & Klien</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section Tentang Kami -->
+        <section class="tentang-kami" id="tentang-kami">
+            <div class="container">
+                <div class="row align-items-center gy-5 gx-lg-5">
+                    
+                    <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                        <img class="img-tentang-kami shadow-sm" src="assets/landingPage/tentang-kami/Team1.jpeg">
+                    </div>
+
+                    <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="mb-5">
+                            <span class="badge-section badge fw-bold mb-3">
+                                Tentang Kami
+                            </span>
+                            <h2 class="fw-bold mb-3 section-title">BISA Academy untuk Organisasi yang Siap Berubah</h2>
+                            <p class="text-muted section-subtitle mb-0">
+                                Kami membantu perusahaan memperkuat komunikasi, meningkatkan produktivitas tim, dan membangun 
+                                sistem operasional yang lebih terstruktur melalui pelatihan dan konsultasi praktis.
+                            </p>
+                        </div>
+
+                        <div class="d-flex flex-column gap-3 mt-4">
+                            <div class="feature-card d-flex flex-start">
+                                <span class="feature-icon d-flex flex-shrink-0">
+                                    <i class="bi bi-clipboard-data fs-3"></i>
+                                </span>
+                                <div>
+                                    <h3 class="feature-title">Pelatihan yang Terukur</h3>
+                                    <p class="feature-desc mb-0">
+                                        Materi disusun untuk langsung berdampak pada kinerja tim dan 
+                                        proses internal.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="feature-card d-flex flex-start">
+                                <span class="feature-icon d-flex flex-shrink-0">
+                                    <i class="bi bi-person-workspace fs-3"></i>
+                                </span>
+                                <div>
+                                    <h3 class="feature-title">Pendampingan Profesional</h3>
+                                    <p class="feature-desc mb-0">
+                                        Tim ahli kami bekerja sama dengan pemimpin organisasi untuk 
+                                        mencapai hasil yang nyata.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section Hiring Partner -->
+        <section class="hiring-partners" data-aos="fade-up" data-aos-duration="800">
+            <div class="container text-center">
+                <h5 class="fw-semibold mb-5">
+                    BISA Academy telah bekerja sama dengan <span style="color: #296CA9;">5+ Hiring Partners</span>
+                </h5>
+
+                <div class="row justify-content-center align-items-center gap-lg-5">
+                    <div class="col-auto mt-0">
+                        <img src="assets/landingPage/Logo PTBA.svg" alt="Logo BukitAsam" />
+                    </div>
+                    <div class="col-auto mt-0">
+                        <img src="assets/landingPage/Logo JustSpeak.svg" alt="Logo JustSpeak" />
+                    </div>
+                    <div class="col-auto mt-0">
+                        <img src="assets/landingPage/Logo Aluxa.png" alt="Logo Aluxa" />
+                    </div>
+                    <div class="col-auto mt-0">
+                        <img src="assets/landingPage/Logo YPI.png" alt="Logo YPI AL UMMAH" />
+                    </div>
+                    <div class="col-auto mt-0">
+                        <img src="assets/landingPage/Logo SeClick..png" alt="Logo SeClick." />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Metodologi -->
+        <section id="metodologi" class="metodologi">
+            <div class="container text-center">
+                <div class="mb-5" data-aos="fade-up" data-aos-duration="1000">
+                    <span class="badge-section badge fw-bold mb-3">
+                        Metodologi
+                    </span>
+                    <h1 class="fw-bold mb-3">
+                        Bagaimana kami membantu <br> produktivitas Anda?
+                    </h1>
+                    <p class="text-muted">
+                        Setiap program BISA Academy dirancang dengan metodologi yang memastikan <br> hasil nyata dan perubahan berkelanjutan.
+                    </p>
+                </div>
+
+                <!-- Cards -->
+                <div class="row g-4 justify-content-center">
+                    <!-- Card 1 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <div class="card card-metodologi text-start h-100">
+                            <span class="icon-metod-card1 d-flex flex-shrink-0 mb-4">
+                                <i class="bi bi-lightning-charge-fill fs-3"></i>
+                            </span>
+
+                            <h5 class="fw-bold mb-3">Aktif & Experiential</h5>
+                            <ul class="text-muted">
+                                <li>Learning by doing — bukan sekadar mendengarkan</li>
+                                <li>Simulasi kasus nyata dari industri Anda</li>
+                                <li>Role-play dan praktik langsung di setiap sesi</li>
+                                <li>Peserta langsung bisa aplikasikan ilmu hari itu</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <div class="card card-metodologi text-start h-100">
+                            <span class="icon-metod-card2 d-flex flex-shrink-0 mb-4">
+                                <i class="bi bi-sliders fs-3 icon-tebal-card2"></i>
+                            </span>
+
+                            <h5 class="fw-bold mb-3">Customized & Relevan</h5>
+                            <ul class="text-muted">
+                                <li>Modul disesuaikan dengan industri dan kebutuhan klien</li>
+                                <li>Asesmen kebutuhan sebelum program dimulai</li>
+                                <li>Studi kasus dari konteks bisnis Anda sendiri</li>
+                                <li>Fleksibel: online, offline, atau hybrid</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <div class="card card-metodologi text-start h-100">
+                            <span class="icon-metod-card3 d-flex flex-shrink-0 mb-4">
+                                <i class="bi bi-graph-up-arrow fs-3 icon-tebal-card3"></i>
+                            </span>
+
+                            <h5 class="fw-bold mb-3">Dampak Berkelanjutan</h5>
+                            <ul class="text-muted">
+                                <li>Follow-up dan coaching setelah program selesai</li>
+                                <li>Pengukuran perubahan perilaku secara terstruktur</li>
+                                <li>Laporan dampak yang transparan untuk manajemen</li>
+                                <li>Dukungan implementasi di lapangan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section Program Pelatihan -->
+        <section class="program-pelatihan" id="program">
+            <div class="container">
+                
+                <div class="row mb-5" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="col-12 text-center d-flex flex-column align-items-center">
+                        <span class="badge-section badge fw-bold mb-3">Program Pelatihan</span>
+                        <h1 class="fw-bold mb-3 header-title">Program Unggulan BISA Academy</h1>
+                        <p class="text-muted header-subtitle">
+                            Setiap program dirancang dengan framework terukur untuk menghasilkan<br class="d-none d-md-block"> 
+                            perubahan nyata bagi peserta and organisasi.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-6 d-flex flex-column gap-4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="program-card bg-white d-flex flex-column">
+                            <img src="assets/img/harmony_system.webp" class="program-card-img">
+                                <span class="program-badge">PROGRAM 01</span>
+                            </img>
+                            <h3 class="program-card-title">Harmony System</h3>
+                            <p class="program-card-text">Sistem operasional untuk mengidentifikasi dan mengatasi 6 masalah mendasar organisasi langsung dari akar penyebabnya, bukan sekadar memperbaiki gejala, agar masalah hilang secara permanen.</p>
+                            <ul class="program-card-list">
+                                <li>Semua orang mengetahui arah tujuan perusahaan dan bagaimana cara mencapainya</li>
+                                <li>Setiap orang memahami perannya dan merasa tepat berada di posisi tersebut</li>
+                                <li>Tidak lagi bergantung pada intuisi semata—segala hal diukur secara jelas dan keputusan diambil berdasarkan data</li>
+                                <li>Sebagian besar permasalahan berhasil diselesaikan hingga ke akar dan tidak terus berulang</li>
+                                <li>Perusahaan memiliki standar yang jelas dalam hampir setiap aspek operasionalnya</li>
+                                <li>Organisasi bekerja selaras seperti sebuah orkestra yang indah—setiap orang mendapatkan apa yang mereka harapkan dari bisnis</li>
+                            </ul>
+                        </div>
+
+                        <div class="program-card bg-white d-flex flex-column">
+                            <img src="assets/img/communication_team.webp" class="program-card-img">
+                                <span class="program-badge">PROGRAM 03</span>
+                            </img>
+                            <h3 class="program-card-title">Communication for Team</h3>
+                            <p class="program-card-text">Pelatihan komunikasi efektif yang dirancang untuk membangun sinergi tim, mengurangi miskomunikasi, dan menciptakan lingkungan kerja yang kolaboratif dan produktif.</p>
+                            <ul class="program-card-list">
+                                <li>Meningkatkan kualitas komunikasi tim</li>
+                                <li>Membangun kepercayaan dan keterbukaan antar anggota</li>
+                                <li>Mengelola konflik dengan pendekatan komunikasi konstruktif</li>
+                                <li>Menciptakan budaya kerja yang harmonis dan produktif</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 d-flex flex-column gap-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="program-card bg-white d-flex flex-column">
+                            <img src="assets/img/csr_literasi.webp" class="program-card-img">
+                                <span class="program-badge">PROGRAM 02</span>
+                            </img>
+                            <h3 class="program-card-title">Program CSR Berbasis Pendidikan & Literasi</h3>
+                            <p class="program-card-text">Wujudkan tanggung jawab sosial perusahaan melalui program pendidikan dan literasi yang terstruktur, berdampak, dan dapat dipertanggungjawabkan kepada pemangku kepentingan.</p>
+                            <ul class="program-card-list">
+                                <li>Perancangan program CSR pendidikan yang terukur</li>
+                                <li>Pelatihan literasi untuk komunitas sasaran</li>
+                                <li>Monitoring & evaluasi dampak program CSR</li>
+                                <li>Pelaporan dampak sosial yang transparan</li>
+                            </ul>
+                        </div>
+
+                        <div class="program-card bg-white d-flex flex-column">
+                            <img src="assets/img/communication_sales.webp" class="program-card-img">
+                                <span class="program-badge">PROGRAM 04</span>
+                            </img>
+                            <h3 class="program-card-title">Communication for Sales</h3>
+                            <p class="program-card-text">Program komunikasi persuasif khusus untuk tim sales dan business owner — mulai dari membangun rapport, menggali kebutuhan klien, presentasi yang menarik, hingga jurus closing yang efektif.</p>
+                            <ul class="program-card-list">
+                                <li>Menguasai teknik komunikasi persuasif dan storytelling</li>
+                                <li>Meningkatkan kemampuan membangun kepercayaan klien</li>
+                                <li>Mengatasi keberatan dengan komunikasi yang tepat</li>
+                                <li>Meningkatkan conversion rate dan angka keberhasilan</li>
+                            </ul>
+                        </div>
+
+                        <a href="program.html" class="btn-lihat-semua d-flex justify-content-between align-items-center">
+                            <span>Lihat semua program</span><i class="bi bi-arrow-right icon-arrow"></i>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Section Testimoni -->
+        <section class="testimoni-section" id="testimoni">
+            <div class="container">
+
+                <div class="row align-items-end mb-5" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="col-lg-9 col-md-8">
+                        <h2 class="fw-bold mb-2 section-title">Lihat Dampak Transformasi Digital dari BISA Academy</h2>
+                        <p class="text-secondary mb-0 fw-medium">dipercaya oleh +500 peserta yang puas dan terkesan</p>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-4 d-flex justify-content-md-end mt-4 mt-md-0 gap-3">
+                        <button type="button" class="btn btn-outline-primary btn-nav rounded-circle d-flex align-items-center justify-content-center" aria-label="Sebelumnya">
+                            <i class="bi bi-arrow-left"></i>
+                        </button>
+                        <button type="button" class="btn btn-outline-primary btn-nav rounded-circle d-flex align-items-center justify-content-center" aria-label="Berikutnya">
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Testimoni - Cards -->
+                <div class="row g-4">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <article class="card h-100 p-4 border-0 shadow-sm testimoni-card">
+                            <div class="d-flex gap-1 mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                            
+                            <p class="mb-4 testimoni-text">
+                                "Program Communication for Team benar-benar mengubah dinamika tim kami. Setelah pelatihan, 
+                                rapat jadi lebih efektif dan konflik internal berkurang drastis."
+                            </p>
+                            
+                            <div class="d-flex align-items-center gap-3 mt-auto">
+                                <div class="avatar-box">
+                                    <img src="assets/landingPage/testimoni1.png" alt="Foto Rahmat Hidayat">
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold user-name">Rahmat Hidayat</h6>
+                                    <small class="user-role">HR Manager</small>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                        <article class="card h-100 p-4 border-0 shadow-sm testimoni-card">
+                            <div class="d-flex gap-1 mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+
+                            <p class="mb-4 testimoni-text">
+                                "Communication for Sales dari BISA Academy luar biasa! Tim sales kami naik konversinya 
+                                signifikan dalam 2 bulan setelah ikut program ini. Sangat rekomendasikan."
+                            </p>
+                            
+                            <div class="d-flex align-items-center gap-3 mt-auto">
+                                <div class="avatar-box">
+                                    <img src="assets/landingPage/testimoni2.png" alt="Foto Siti Aisyah">
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold user-name">Siti Aisyah</h6>
+                                    <small class="user-role">Sales Director</small>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                        <article class="card h-100 p-4 border-0 shadow-sm testimoni-card">
+                            <div class="d-flex gap-1 mb-3">
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+
+                            <p class="mb-4 testimoni-text">
+                                "Harmonic System membantu kami membangun SOP yang jelas dan sistem kerja yang efisien. 
+                                Bisnis kami kini bisa berjalan lebih mandiri tanpa saya harus terlibat di semua hal."
+                            </p>
+                            
+                            <div class="d-flex align-items-center gap-3 mt-auto">
+                                <div class="avatar-box">
+                                    <img src="assets/landingPage/testimoni3.png" alt="Foto Budi Wibowo">
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold user-name">Budi Wibowo</h6>
+                                    <small class="user-role">CEO</small>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section Hubungi Kami -->
+        <section class="hubungi-kami cta-section" id="hubungi-kami" aria-labelledby="hubungi-kami-title" data-aos="zoom-in" data-aos-duration="1000">
+            <h2 id="hubungi-kami-title">
+                Siap Memulai Perjalanan Transformasi Bersama BISA Academy?
+            </h2>
+            <p class="text-wrapper-23">
+                Konsultasikan kebutuhan pelatihan dan pengembangan tim Anda. Gratis, tanpa komitmen.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-dark" aria-label="Hubungi Kami melalui WhatsApp">
+                    <i class="bi bi-whatsapp"></i>
+                    <span>Hubungi Kami</span>
+                </a>
+                <a href="formulir-pendaftaran.html" class="btn-light" aria-label="Konsultasi Gratis">
+                    <i class="bi bi-calendar-event"></i>
+                    <span>Konsultasi Gratis</span>
+                </a>
+            </div>
+            <div class="cta-image-wrapper">
+                <img class="image" src="assets/landingPage/people2.png" alt="Tim BISA Academy" width="790" height="auto" loading="lazy" />
+            </div>
+        </section>
+    </main>
 
     <footer class="footer-bisa">    
         <div class="container">
@@ -137,5 +1452,9 @@
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     </body>
     </html>
