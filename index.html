@@ -13,10 +13,11 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
+        html, body {
             font-family: "Plus Jakarta Sans", sans-serif;
             background: #eef4fc;
             color: #1e293b;
+            overflow-x: hidden;
         }
 
         a {
@@ -367,9 +368,10 @@
 
         .img-tentang-kami {
             width: 100%;
+            height: 400px;
+            object-fit: cover;
             background-color: #d9d9d9;
-            aspect-ratio: 1 / 1;
-            border-radius: 24px;
+            border-radius: 14px;
         }
 
         .feature-card {
@@ -515,13 +517,12 @@
             height: 100%;
         }
 
-        .program-card-img { /* Placeholder Gambar Abu-abu */
+        .program-card-img {
             background-color: #d9d9d9;
             border-radius: 16px;
-            height: 39%;
+            height: 220px;
             width: 100%;
-            position: relative;
-            margin-bottom: 24px;
+            object-fit: cover;
         }
 
         .program-badge {
@@ -772,6 +773,14 @@
         }
 
         @media (max-width: 575.98px) {
+            .hero-title {
+                font-size: 28px !important;
+            }
+
+            .hero-subtitle {
+                font-size: 14px !important;
+            }
+
             .cta-section {
                 padding: 35px 20px 0 20px;
                 border-radius: 25px;
@@ -976,7 +985,7 @@
                 </div>
 
                 <h1 class="display-4 fw-bold mb-3 hero-title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
-                    Dari <span class="highlight-pill text-white fst-italic">Nol Ide</span> Sampai<br>
+                    Dari <span class="highlight-pill text-white fst-italic">Nol Ide</span> Sampai<br class="d-none d-md-block">
                     Bisnis <span class="text-primary-brand">Berjalan Sendiri</span><span class="text-orange-brand">.</span>
                 </h1>
 
@@ -984,9 +993,9 @@
                     BISA Academy menggunakan tiga tahapan terstruktur untuk membangun bisnis dari nol hingga autopilot.
                 </p>
 
-                <div class="d-flex justify-content-center gap-3 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-                    <a class="btn btn-lihat-program fw-semibold px-4" href="#program">Lihat Program</a>
-                    <a class="btn btn-hubungi-kami fw-semibold px-4" href="#hubungi-kami">Hubungi Kami</a>
+                <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center gap-3 mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <a class="btn btn-lihat-program fw-semibold px-4 w-100 w-sm-auto" style="max-width: 280px;" href="#program">Lihat Program</a>
+                    <a class="btn btn-hubungi-kami fw-semibold px-4 w-100 w-sm-auto" style="max-width: 280px;" href="#hubungi-kami">Hubungi Kami</a>
                 </div>
 
                 <div class="hero-image-wrapper mx-auto mt-4" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="400">
@@ -998,7 +1007,7 @@
 
         <!-- Section Statistik -->
         <section class="stat-section text-white" aria-label="Statistik BISA Academy" data-aos="fade-up" data-aos-duration="800">
-            <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-lg-5">
+            <div class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 gap-md-0 gap-lg-5">
                 
                 <div class="d-flex align-items-center gap-3 stat-item">
                     <div class="stat-number">+500</div>
@@ -1079,7 +1088,7 @@
                     BISA Academy telah bekerja sama dengan <span style="color: #296CA9;">5+ Hiring Partners</span>
                 </h5>
 
-                <div class="row justify-content-center align-items-center gap-lg-5">
+                <div class="row justify-content-center align-items-center g-4">
                     <div class="col-auto mt-0">
                         <img src="assets/landingPage/Logo PTBA.svg" alt="Logo BukitAsam" />
                     </div>
@@ -1189,9 +1198,10 @@
                 <div class="row g-4">
                     <div class="col-lg-6 d-flex flex-column gap-4" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                         <div class="program-card bg-white d-flex flex-column">
-                            <img src="assets/img/harmony_system.webp" class="program-card-img">
+                            <div class="position-relative mb-4">
+                                <img src="assets/img/harmony_system.webp" class="program-card-img" alt="Harmony System">
                                 <span class="program-badge">PROGRAM 01</span>
-                            </img>
+                            </div>
                             <h3 class="program-card-title">Harmony System</h3>
                             <p class="program-card-text">Sistem operasional untuk mengidentifikasi dan mengatasi 6 masalah mendasar organisasi langsung dari akar penyebabnya, bukan sekadar memperbaiki gejala, agar masalah hilang secara permanen.</p>
                             <ul class="program-card-list">
@@ -1205,9 +1215,10 @@
                         </div>
 
                         <div class="program-card bg-white d-flex flex-column">
-                            <img src="assets/img/communication_team.webp" class="program-card-img">
+                            <div class="position-relative mb-4">
+                                <img src="assets/img/communication_team.webp" class="program-card-img" alt="Communication for Team">
                                 <span class="program-badge">PROGRAM 03</span>
-                            </img>
+                            </div>
                             <h3 class="program-card-title">Communication for Team</h3>
                             <p class="program-card-text">Pelatihan komunikasi efektif yang dirancang untuk membangun sinergi tim, mengurangi miskomunikasi, dan menciptakan lingkungan kerja yang kolaboratif dan produktif.</p>
                             <ul class="program-card-list">
@@ -1221,9 +1232,10 @@
 
                     <div class="col-lg-6 d-flex flex-column gap-4" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                         <div class="program-card bg-white d-flex flex-column">
-                            <img src="assets/img/csr_literasi.webp" class="program-card-img">
+                            <div class="position-relative mb-4">
+                                <img src="assets/img/csr_literasi.webp" class="program-card-img" alt="Program CSR Berbasis Pendidikan & Literasi">
                                 <span class="program-badge">PROGRAM 02</span>
-                            </img>
+                            </div>
                             <h3 class="program-card-title">Program CSR Berbasis Pendidikan & Literasi</h3>
                             <p class="program-card-text">Wujudkan tanggung jawab sosial perusahaan melalui program pendidikan dan literasi yang terstruktur, berdampak, dan dapat dipertanggungjawabkan kepada pemangku kepentingan.</p>
                             <ul class="program-card-list">
@@ -1235,9 +1247,10 @@
                         </div>
 
                         <div class="program-card bg-white d-flex flex-column">
-                            <img src="assets/img/communication_sales.webp" class="program-card-img">
+                            <div class="position-relative mb-4">
+                                <img src="assets/img/communication_sales.webp" class="program-card-img" alt="Communication for Sales">
                                 <span class="program-badge">PROGRAM 04</span>
-                            </img>
+                            </div>
                             <h3 class="program-card-title">Communication for Sales</h3>
                             <p class="program-card-text">Program komunikasi persuasif khusus untuk tim sales dan business owner — mulai dari membangun rapport, menggali kebutuhan klien, presentasi yang menarik, hingga jurus closing yang efektif.</p>
                             <ul class="program-card-list">
@@ -1267,7 +1280,7 @@
                         <p class="text-secondary mb-0 fw-medium">dipercaya oleh +500 peserta yang puas dan terkesan</p>
                     </div>
                     
-                    <div class="col-lg-3 col-md-4 d-flex justify-content-md-end mt-4 mt-md-0 gap-3">
+                    <div class="col-lg-3 col-md-4 d-flex justify-content-center justify-content-md-end mt-4 mt-md-0 gap-3">
                         <button type="button" class="btn btn-outline-primary btn-nav rounded-circle d-flex align-items-center justify-content-center" aria-label="Sebelumnya" data-bs-target="#testimoniCarousel" data-bs-slide="prev">
                             <i class="bi bi-arrow-left"></i>
                         </button>
@@ -1429,12 +1442,12 @@
                     <h5 class="subscribe-title mb-2">Subscribe Email</h5>
                     <p class="subscribe-desc mb-3">Temukan insight bisnis dan transformasi digital melalui update nawala dan artikel terbaru kami</p>
                     
-                    <form class="subscribe-form d-flex">
+                    <form class="subscribe-form d-flex flex-column flex-sm-row gap-2">
                         <div class="input-group">
                             <span class="input-group-text bg-light border-end-0 rounded-start-pill"><i class="bi bi-envelope"></i></span>
                             <input type="email" class="form-control bg-light border-start-0 rounded-end-pill px-0" placeholder="Masukkan email anda" required>
                         </div>
-                        <button class="btn btn-primary btn-subscribe rounded-pill ms-2 px-4" type="submit">Subscribe</button>
+                        <button class="btn btn-primary btn-subscribe rounded-pill ms-0 ms-sm-2 px-4" type="submit">Subscribe</button>
                     </form>
                 </div>
 

@@ -1,4 +1,4 @@
-// script program.html
+// awal script program.html
 // Dibungkus dalam kondisi untuk memastikan elemen ada sebelum dijalankan
 (function() {
     const container = document.getElementById("program-cards-container");
@@ -141,9 +141,9 @@
 
     renderPrograms();
 })();
-// end script program
+// akhir script program.html
 
-// script formulir-pendaftaran.html
+// awal script formulir-pendaftaran.html
 (function () {
     const form = document.getElementById('registrationForm');
     
@@ -385,4 +385,4 @@
                 dateInput.setAttribute('min', today);
             }
         })();
-// end formulir-pendaftaran
+// akhir script file formulir-pendaftaran.html

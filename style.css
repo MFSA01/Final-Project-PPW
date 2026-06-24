@@ -1,7 +1,8 @@
-body {
+html, body {
   font-family: "Plus Jakarta Sans", sans-serif;
   background: #f8f9fb;
   color: #1e293b;
+  overflow-x: hidden;
 }
 
 a {

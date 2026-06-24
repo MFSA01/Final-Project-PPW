@@ -17,17 +17,18 @@
         .registrasi-page {
             background-color: #ffffff;
             width: 100%;
-            min-width: 1440px;
             min-height: 100vh;
             position: relative;
-            overflow-x: auto;
+            overflow-x: hidden;
         }
 
         .registrasi-container {
-            width: 1440px;
-            height: 800px;
+            width: 100%;
+            max-width: 1440px;
+            min-height: 800px;
             margin: 0 auto;
             position: relative;
+            padding: 20px;
         }
 
         /* Back Button with smooth animations */
@@ -399,6 +400,269 @@
         .carousel-btn.next {
             left: 1231px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 1440px) {
+            .registrasi-container {
+                padding: 40px 20px;
+            }
+            
+            .registrasi-page .rectangle {
+                left: auto;
+                right: 40px;
+                width: calc(50% - 60px);
+            }
+            
+            .registrasi-page .whatsapp-image {
+                left: auto;
+                right: calc(25% - 135px);
+            }
+            
+            .carousel-btn.prev {
+                left: auto;
+                right: 90px;
+            }
+            
+            .carousel-btn.next {
+                left: auto;
+                right: 40px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .registrasi-page .frame {
+                left: 50px;
+            }
+            
+            .registrasi-page .text-wrapper {
+                left: 50px;
+                width: 280px;
+            }
+            
+            .btn-social,
+            .registrasi-page .group-5,
+            .registrasi-page .frame-6 {
+                left: 50px;
+            }
+            
+            .kebijakan-privasi {
+                left: 20px;
+                width: calc(100% - 40px);
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .registrasi-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-height: auto;
+                padding: 80px 20px 40px;
+            }
+            
+            /* Show carousel at top on mobile */
+            .registrasi-page .rectangle {
+                display: none;
+            }
+            
+            .registrasi-page .whatsapp-image {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 500px;
+                height: 400px;
+                margin: 0 auto 40px;
+                border-radius: 20px;
+            }
+            
+            /* Show carousel navigation buttons */
+            .carousel-btn {
+                position: absolute;
+                bottom: 20px;
+                width: 37px;
+                height: 37px;
+                background-color: #ffffff;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                cursor: pointer;
+                z-index: 15;
+                transition: all 0.2s ease;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+            
+            .carousel-btn.prev {
+                left: 20px;
+                right: auto;
+                top: auto;
+            }
+            
+            .carousel-btn.next {
+                right: 20px;
+                left: auto;
+                top: auto;
+            }
+            
+            .registrasi-page .frame {
+                position: relative;
+                left: 0;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .registrasi-page .text-wrapper {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto 20px;
+            }
+            
+            .btn-social {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto 12px;
+            }
+            
+            .btn-google {
+                top: 0;
+            }
+            
+            .btn-facebook {
+                top: 0;
+            }
+            
+            .registrasi-page .group-5 {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 400px;
+                margin: 20px auto;
+            }
+            
+            .registrasi-page .frame-6 {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .kebijakan-privasi {
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100%;
+                max-width: 400px;
+                margin: 30px auto 0;
+            }
+            
+            .btn-kembali {
+                position: fixed;
+                top: 20px;
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .registrasi-container {
+                padding: 70px 15px 30px;
+            }
+            
+            .registrasi-page .whatsapp-image {
+                height: 300px;
+                margin-bottom: 30px;
+                border-radius: 15px;
+            }
+            
+            .carousel-btn {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .carousel-btn.prev {
+                left: 15px;
+            }
+            
+            .carousel-btn.next {
+                right: 15px;
+            }
+            
+            .carousel-btn i {
+                font-size: 14px !important;
+            }
+            
+            .registrasi-page .text-wrapper {
+                font-size: 20px;
+                width: 100%;
+            }
+            
+            .btn-social,
+            .registrasi-page .group-5,
+            .registrasi-page .frame-6,
+            .kebijakan-privasi {
+                max-width: 100%;
+            }
+            
+            .btn-social {
+                font-size: 13px;
+                height: 44px;
+                padding: 0 15px;
+            }
+            
+            .input-field-container {
+                height: 48px;
+            }
+            
+            .btn-primary {
+                height: 48px;
+            }
+            
+            .btn-kembali {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+            
+            .btn-kembali span {
+                display: none;
+            }
+            
+            .btn-kembali::after {
+                content: "Kembali";
+            }
+            
+            .kebijakan-privasi {
+                font-size: 10.5px;
+            }
+        }
+
+        @media (max-width: 375px) {
+            .registrasi-page .logo-BISA-academy {
+                height: 38px;
+            }
+            
+            .registrasi-page .BISA {
+                font-size: 18px;
+            }
+            
+            .registrasi-page .text-wrapper-3 {
+                font-size: 12px;
+            }
+            
+            .registrasi-page .text-wrapper {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 
@@ -409,6 +673,26 @@
         </a>
         <div class="registrasi-container">
             <section class="rectangle" aria-hidden="true"></section>
+            
+            <!-- Carousel content (images) - moved to top for mobile -->
+            <div id="registerCarousel" class="carousel slide whatsapp-image" data-bs-ride="carousel">
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item active h-100">
+                        <img src="assets/img/login1.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Ilustrasi peserta BISA Academy sedang belajar di depan komputer" />
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="assets/img/register1.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Ilustrasi peserta BISA Academy login" />
+                    </div>
+                </div>
+                <!-- Carousel navigation buttons (arrows) - inside carousel for mobile positioning -->
+                <button class="carousel-btn prev" type="button" data-bs-target="#registerCarousel" data-bs-slide="prev" aria-label="Previous">
+                    <i class="bi bi-chevron-left" style="color: #296ca9; font-size: 16px; font-weight: bold;"></i>
+                </button>
+                <button class="carousel-btn next" type="button" data-bs-target="#registerCarousel" data-bs-slide="next" aria-label="Next">
+                    <i class="bi bi-chevron-right" style="color: #296ca9; font-size: 16px; font-weight: bold;"></i>
+                </button>
+            </div>
+            
             <header class="frame">
                 <img class="logo-BISA-academy" src="assets/icon/icon-Bisa-Academy.png" alt="Logo BISA Academy" />
                 <div class="frame-2">
@@ -458,26 +742,6 @@
                     Dengan klik daftar berarti Anda menyetujui <a href="#">Ketentuan Penggunaan</a> dan telah membaca <a href="#">Kebijakan Privasi</a> kami
                 </p>
             </section>
-
-            <!-- Carousel navigation buttons (arrows) -->
-            <button class="carousel-btn prev" type="button" data-bs-target="#registerCarousel" data-bs-slide="prev" aria-label="Previous">
-                <i class="bi bi-chevron-left" style="color: #296ca9; font-size: 16px; font-weight: bold;"></i>
-            </button>
-            <button class="carousel-btn next" type="button" data-bs-target="#registerCarousel" data-bs-slide="next" aria-label="Next">
-                <i class="bi bi-chevron-right" style="color: #296ca9; font-size: 16px; font-weight: bold;"></i>
-            </button>
-
-            <!-- Carousel content (images) -->
-            <div id="registerCarousel" class="carousel slide whatsapp-image" data-bs-ride="carousel">
-                <div class="carousel-inner h-100">
-                    <div class="carousel-item active h-100">
-                        <img src="assets/img/login1.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Ilustrasi peserta BISA Academy sedang belajar di depan komputer" />
-                    </div>
-                    <div class="carousel-item h-100">
-                        <img src="assets/img/register1.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Ilustrasi peserta BISA Academy login" />
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
