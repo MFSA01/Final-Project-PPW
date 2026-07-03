@@ -15,6 +15,7 @@ Fitur
 Demo / Preview
 --------------
 - Untuk melihat proyek secara lokal, buka `index.html` di browser.
+- Bisa juga kunjungi websitenya langsung di https://project-farrel.web.id
 
 Struktur proyek
 ---------------
