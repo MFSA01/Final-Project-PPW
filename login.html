@@ -366,11 +366,26 @@
             overflow: hidden;
             z-index: 5;
         }
+        
+        /* Wrapper for carousel buttons - positioned relative to rectangle */
+        .carousel-controls {
+            position: absolute;
+            top: 40px;
+            left: 628px;
+            width: 680px;
+            height: 750px;
+            pointer-events: none;
+            z-index: 20;
+        }
+        
+        .carousel-controls .carousel-btn {
+            pointer-events: all;
+        }
 
-        /* Carousel Navigation Buttons */
+        /* Carousel Navigation Buttons - Desktop: below photo in blue area */
         .carousel-btn {
             position: absolute;
-            top: 718px;
+            bottom: 20px;
             width: 37px;
             height: 37px;
             background-color: #ffffff;
@@ -382,11 +397,13 @@
             cursor: pointer;
             z-index: 15;
             transition: all 0.2s ease;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
         }
 
         .carousel-btn:hover {
             background-color: #f1f5f9;
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
 
         .carousel-btn:active {
@@ -394,11 +411,13 @@
         }
 
         .carousel-btn.prev {
-            left: 1181px;
+            right: 60px;
+            left: auto;
         }
 
         .carousel-btn.next {
-            left: 1231px;
+            right: 15px;
+            left: auto;
         }
 
         /* Responsive Design */
@@ -454,7 +473,7 @@
 
         @media (max-width: 992px) {
             .registrasi-container {
-                display: flex;
+                displa`y: flex;
                 flex-direction: column;
                 align-items: center;
                 min-height: auto;
@@ -463,6 +482,10 @@
             
             /* Show carousel at top on mobile */
             .registrasi-page .rectangle {
+                display: none;
+            }
+            
+            .carousel-controls {
                 display: none;
             }
             
@@ -477,34 +500,25 @@
                 border-radius: 20px;
             }
             
-            /* Show carousel navigation buttons */
+            /* Move carousel navigation buttons inside carousel on mobile */
+            .registrasi-page .whatsapp-image .carousel-btn {
+                display: flex;
+            }
+            
             .carousel-btn {
                 position: absolute;
                 bottom: 20px;
-                width: 37px;
-                height: 37px;
-                background-color: #ffffff;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: none;
-                cursor: pointer;
-                z-index: 15;
-                transition: all 0.2s ease;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+                background-color: rgba(255, 255, 255, 0.95);
             }
             
             .carousel-btn.prev {
                 left: 20px;
                 right: auto;
-                top: auto;
             }
             
             .carousel-btn.next {
                 right: 20px;
                 left: auto;
-                top: auto;
             }
             
             .registrasi-page .frame {
@@ -675,7 +689,7 @@
             <section class="rectangle" aria-hidden="true"></section>
             
             <!-- Carousel content (images) - moved to top for mobile -->
-            <div id="registerCarousel" class="carousel slide whatsapp-image" data-bs-ride="carousel">
+            <div id="registerCarousel" class="carousel slide whatsapp-image">
                 <div class="carousel-inner h-100">
                     <div class="carousel-item active h-100">
                         <img src="assets/img/login1.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Ilustrasi peserta BISA Academy sedang belajar di depan komputer" />
@@ -684,7 +698,10 @@
                         <img src="assets/img/register1.png" class="d-block w-100 h-100" style="object-fit: cover;" alt="Ilustrasi peserta BISA Academy login" />
                     </div>
                 </div>
-                <!-- Carousel navigation buttons (arrows) - inside carousel for mobile positioning -->
+            </div>
+            
+            <!-- Carousel navigation buttons wrapper -->
+            <div class="carousel-controls">
                 <button class="carousel-btn prev" type="button" data-bs-target="#registerCarousel" data-bs-slide="prev" aria-label="Previous">
                     <i class="bi bi-chevron-left" style="color: #296ca9; font-size: 16px; font-weight: bold;"></i>
                 </button>
