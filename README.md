@@ -7,7 +7,7 @@ Proyek ini adalah aplikasi/website statis yang dibangun menggunakan HTML, CSS da
 Fitur
 -----
 - Halaman beranda dengan tata letak responsif
-- Navigasi sederhana antar halaman (jika ada)
+- Navigasi sederhana antar halaman
 - Styling konsisten menggunakan CSS (termasuk responsivitas untuk mobile)
 - Struktur file yang mudah dipahami dan dikembangkan
 - Menggunakan manipulasi DOM untuk menyimpan data sementara pada website
