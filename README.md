@@ -26,8 +26,7 @@ Struktur proyek
 - script.js
 - login.html
 - register.html
-- css/
-  - styles.css
+- styles.css
 - assets/
   - img/
   - logo/
@@ -58,4 +57,4 @@ Daftar anggota kelompok
 5. [Octa] — Peran: Developer & Assets Creator (Struktur & Pencarian Assets)
 
 Kontak
-------
+email : m.farrel916@students.amikom.ac.id
